@@ -1,0 +1,78 @@
+import Link from 'next/link';
+import { mockBlogPosts } from '@/lib/data/blog-posts';
+import { Button } from '@/components/ui/button';
+import { formatDate } from '@/lib/utils/formatting';
+import { ArrowRight } from 'lucide-react';
+
+export default function BlogPage() {
+  const publishedPosts = mockBlogPosts.filter((post) => post.published);
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-black via-gray-900 to-black py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+          <p className="text-accent font-semibold uppercase tracking-widest">Sneaker Culture</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-white">SOLE Blog</h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Insights, guides, and news about sneakers, running, and sneaker culture.
+          </p>
+        </div>
+      </section>
+
+      {/* Blog Posts */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {publishedPosts.map((post) => (
+              <article
+                key={post.id}
+                className="group bg-card border border-border rounded-lg overflow-hidden hover:border-accent transition-all hover:shadow-lg"
+              >
+                {/* Image */}
+                <Link href={`/blog/${post.slug}`}>
+                  <div className="relative aspect-video overflow-hidden bg-secondary">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 left-4 bg-accent/90 px-3 py-1 rounded-full text-xs font-semibold text-black">
+                      {post.category}
+                    </div>
+                  </div>
+                </Link>
+
+                {/* Content */}
+                <div className="p-6 space-y-4">
+                  <div>
+                    <p className="text-xs text-muted-foreground font-semibold uppercase tracking-widest mb-2">
+                      {post.author}
+                    </p>
+                    <Link href={`/blog/${post.slug}`} className="group/title">
+                      <h2 className="text-xl font-bold text-foreground group-hover/title:text-accent transition-colors line-clamp-2">
+                        {post.title}
+                      </h2>
+                    </Link>
+                  </div>
+
+                  <p className="text-muted-foreground line-clamp-2 text-sm">{post.excerpt}</p>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-border">
+                    <p className="text-xs text-muted-foreground">{formatDate(post.createdAt)}</p>
+                    <Link href={`/blog/${post.slug}`}>
+                      <Button variant="ghost" size="sm" className="text-accent hover:text-accent">
+                        Read More
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
