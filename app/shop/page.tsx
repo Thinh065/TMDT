@@ -1,7 +1,35 @@
+import type { Metadata } from 'next';
 import ShopContent from '@/components/shop/shop-content';
 import { mockProducts } from '@/lib/data/products';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Cửa Hàng - SOLE | Giày Sneaker & Thể Thao',
+  description: 'Duyệt bộ sưu tập hoàn chỉnh các sneaker chất lượng cao và giày thể thao từ các thương hiệu hàng đầu.',
+  openGraph: {
+    type: 'website',
+    locale: 'vi_VN',
+    url: 'https://tmdt-9evc.vercel.app/shop',
+    siteName: 'SOLE Shop',
+    title: 'Cửa Hàng - SOLE | Giày Sneaker & Thể Thao',
+    description: 'Duyệt bộ sưu tập hoàn chỉnh các sneaker chất lượng cao và giày thể thao từ các thương hiệu hàng đầu.',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&h=630&fit=crop',
+        width: 1200,
+        height: 630,
+        alt: 'SOLE Shop',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cửa Hàng - SOLE | Giày Sneaker & Thể Thao',
+    description: 'Duyệt bộ sưu tập hoàn chỉnh các sneaker chất lượng cao và giày thể thao từ các thương hiệu hàng đầu.',
+    images: ['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&h=630&fit=crop'],
+  },
+};
 
 export default function ShopPage() {
   const productSchema = {

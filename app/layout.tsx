@@ -20,6 +20,29 @@ export const metadata: Metadata = {
   title: 'SOLE - Cửa Hàng Giày Cao Cấp',
   description: 'Khám phá những đôi giày sneaker và giày thể thao mới nhất từ các thương hiệu hàng đầu. Mua sắm dễ dàng với nhiều mẫu mã thời trang, chất lượng cao, giá tốt và giao hàng nhanh trên toàn quốc.',
   generator: 'v0.app',
+  openGraph: {
+    type: 'website',
+    locale: 'vi_VN',
+    url: 'https://tmdt-9evc.vercel.app/',
+    siteName: 'SOLE',
+    title: 'SOLE - Cửa Hàng Giày Cao Cấp',
+    description: 'Khám phá những đôi giày sneaker và giày thể thao mới nhất từ các thương hiệu hàng đầu.',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&h=630&fit=crop',
+        width: 1200,
+        height: 630,
+        alt: 'SOLE Sneaker Store',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SOLE - Cửa Hàng Giày Cao Cấp',
+    description: 'Khám phá những đôi giày sneaker và giày thể thao mới nhất từ các thương hiệu hàng đầu.',
+    images: ['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&h=630&fit=crop'],
+    creator: '@sole_store',
+  },
   icons: {
     icon: [
       {

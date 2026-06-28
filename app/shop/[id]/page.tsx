@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { mockProducts } from '@/lib/data/products';
 import { useCart } from '@/lib/context/cart-context';
 import { useFavorites } from '@/lib/context/favorites-context';

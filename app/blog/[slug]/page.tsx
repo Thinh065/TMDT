@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { use } from 'react';
+import type { Metadata } from 'next';
 import { mockBlogPosts } from '@/lib/data/blog-posts';
 import { Button } from '@/components/ui/button';
 import { formatDate } from '@/lib/utils/formatting';
@@ -9,6 +10,49 @@ interface BlogDetailPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({ params }: BlogDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = mockBlogPosts.find((p) => p.slug === slug);
+
+  if (!post) {
+    return {
+      title: 'Bài Viết Không Tìm Thấy',
+      description: 'Bài viết blog không tìm thấy',
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      type: 'article',
+      locale: 'vi_VN',
+      url: `https://tmdt-9evc.vercel.app/blog/${post.slug}`,
+      siteName: 'SOLE Blog',
+      title: post.title,
+      description: post.excerpt,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      publishedTime: post.createdAt,
+      modifiedTime: post.updatedAt,
+      authors: [post.author],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
+      creator: '@sole_store',
+    },
+  };
 }
 
 export default function BlogDetailPage({ params }: BlogDetailPageProps) {

@@ -1,8 +1,36 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { mockBlogPosts } from '@/lib/data/blog-posts';
 import { Button } from '@/components/ui/button';
 import { formatDate } from '@/lib/utils/formatting';
 import { ArrowRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Blog SOLE - Tin Tức & Hướng Dẫn Về Sneaker',
+  description: 'Thông tin chi tiết, hướng dẫn và tin tức về sneaker, chạy bộ và văn hóa sneaker.',
+  openGraph: {
+    type: 'website',
+    locale: 'vi_VN',
+    url: 'https://tmdt-9evc.vercel.app/blog',
+    siteName: 'SOLE Blog',
+    title: 'Blog SOLE - Tin Tức & Hướng Dẫn Về Sneaker',
+    description: 'Thông tin chi tiết, hướng dẫn và tin tức về sneaker, chạy bộ và văn hóa sneaker.',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&h=630&fit=crop',
+        width: 1200,
+        height: 630,
+        alt: 'SOLE Blog',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog SOLE - Tin Tức & Hướng Dẫn Về Sneaker',
+    description: 'Thông tin chi tiết, hướng dẫn và tin tức về sneaker, chạy bộ và văn hóa sneaker.',
+    images: ['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&h=630&fit=crop'],
+  },
+};
 
 export default function BlogPage() {
   const publishedPosts = mockBlogPosts.filter((post) => post.published);
