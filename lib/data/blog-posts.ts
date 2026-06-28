@@ -72,7 +72,7 @@ Khi chọn giày bóng rổ, hãy cân nhắc:
 
 Giày bóng rổ tốt nhất là giày cung cấp hiệu suất bạn cần trong khi khiến bạn cảm thấy tự tin và thoải mái.`,
     author: 'Michael Chen',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ5ztof3IiOX2vBeu16fMsVHLflANMB4zUfj_vqpLBFQ&s=10',
+    image: 'https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=800&h=400&fit=crop',
     category: 'Bóng Rổ',
     tags: ['basketball', 'performance', 'style', 'shoes'],
     createdAt: '2024-01-10',
