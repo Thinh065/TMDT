@@ -1,0 +1,41 @@
+# SOLE Sneaker Store robots.txt
+# This file tells search engines and other web crawlers which pages they can and cannot access
+
+# Allow all user agents by default
+User-agent: *
+Allow: /
+
+# Disallow sensitive pages
+Disallow: /admin
+Disallow: /auth
+Disallow: /account
+Disallow: /cart
+Disallow: /checkout
+Disallow: /api
+
+# Disallow specific file types
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Slow down aggressive bots
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Block bad bots
+User-agent: BadBot
+Disallow: /
+
+User-agent: EvilBot
+Disallow: /
+
+# Sitemap reference
+Sitemap: https://tmdt-9evc.vercel.app/sitemap.xml
+
+# Crawl-delay for all other bots (optional)
+Crawl-delay: 1
