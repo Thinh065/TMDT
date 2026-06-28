@@ -13,6 +13,10 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: 'SOLE - Cửa Hàng Giày Cao Cấp',
   description: 'Khám phá những đôi giày sneaker và giày thể thao mới nhất từ các thương hiệu hàng đầu',
   generator: 'v0.app',
