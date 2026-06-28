@@ -10,8 +10,52 @@ export default function Home() {
   const featuredProducts = mockProducts.filter((p) => p.featured).slice(0, 4);
   const featuredBlogPosts = mockBlogPosts.slice(0, 4);
 
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SOLE',
+    url: 'https://sole-store.com',
+    logo: 'https://sole-store.com/logo.png',
+    description: 'Discover the latest sneaker trends from top brands worldwide',
+    sameAs: [
+      'https://www.facebook.com/sole-store',
+      'https://www.twitter.com/sole-store',
+      'https://www.instagram.com/sole-store',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Support',
+      telephone: '+1-xxx-xxx-xxxx',
+      email: 'support@sole-store.com',
+    },
+  };
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'SOLE',
+    url: 'https://sole-store.com',
+    description: 'Premium Sneaker Store - Discover and Shop Latest Shoe Collection',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://sole-store.com/shop?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
   return (
     <div className="w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-20 md:py-32 overflow-hidden">
         {/* Background decoration */}

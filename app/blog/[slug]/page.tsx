@@ -32,8 +32,33 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
     .filter((p) => p.category === post.category && p.id !== post.id)
     .slice(0, 3);
 
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    datePublished: post.createdAt,
+    dateModified: post.updatedAt,
+    articleBody: post.content,
+    keywords: post.tags.join(','),
+    mainEntity: {
+      '@type': 'Article',
+      headline: post.title,
+      articleBody: post.content,
+    },
+  };
+
   return (
     <article className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       {/* Header */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Link href="/blog" className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors mb-8">

@@ -61,8 +61,36 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
 
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    image: product.images || [product.image],
+    brand: {
+      '@type': 'Brand',
+      name: product.brand || 'SOLE',
+    },
+    offers: {
+      '@type': 'Offer',
+      url: `https://sole-store.com/shop/${product.id}`,
+      priceCurrency: 'USD',
+      price: product.price.toFixed(2),
+      availability: 'https://schema.org/InStock',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.5',
+      reviewCount: '128',
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">

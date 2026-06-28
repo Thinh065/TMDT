@@ -7,8 +7,35 @@ import { ArrowRight } from 'lucide-react';
 export default function BlogPage() {
   const publishedPosts = mockBlogPosts.filter((post) => post.published);
 
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Blog SOLE',
+    description: 'Thông tin chi tiết, hướng dẫn và tin tức về sneaker, chạy bộ và văn hóa sneaker.',
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: publishedPosts.map((post, index) => ({
+        '@type': 'BlogPosting',
+        position: index + 1,
+        headline: post.title,
+        description: post.excerpt,
+        image: post.image,
+        author: {
+          '@type': 'Person',
+          name: post.author,
+        },
+        datePublished: post.createdAt,
+        dateModified: post.updatedAt,
+      })),
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-black via-gray-900 to-black py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
