@@ -43,7 +43,9 @@ Tìm giày chạy bộ phù hợp mất thời gian và thử nghiệm, nhưng n
     id: '2',
     title: 'Giày Bóng Rổ: Hiệu Suất vs Phong Cách',
     slug: 'basketball-shoes-performance-vs-style',
-    excerpt: 'Khám phá sự cân bằng giữa các tính năng hiệu suất và phong cách trong giày bóng rổ hiện đại.',
+    excerpt: 'Khám phá sự cân bằng giữa hiệu suất, bảo vệ cổ chân và phong cách thiết kế trong giày bóng rổ hiện đại.',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&h=400&fit=crop',
+    category: 'Bóng Rổ',
     content: `Giày bóng rổ đã phát triển đáng kể trong thập kỷ qua. Giày bóng rổ ngày nay phải cân bằng giữa các yêu cầu hiệu suất và sức hấp dẫn của phong cách đường phố.
 
 ## Các Tính Năng Hiệu Suất
