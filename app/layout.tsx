@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   title: 'SOLE - Cửa Hàng Giày Cao Cấp',
-  description: 'Khám phá những đôi giày sneaker và giày thể thao mới nhất từ các thương hiệu hàng đầu',
+  description: 'Khám phá những đôi giày sneaker và giày thể thao mới nhất từ các thương hiệu hàng đầu. Mua sắm dễ dàng với nhiều mẫu mã thời trang, chất lượng cao, giá tốt và giao hàng nhanh trên toàn quốc.',
   generator: 'v0.app',
   icons: {
     icon: [
