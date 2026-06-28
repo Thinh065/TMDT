@@ -32,7 +32,7 @@ Một số thương hiệu giày chạy hàng đầu bao gồm Nike, Adidas, Bro
 
 Tìm giày chạy bộ phù hợp mất thời gian và thử nghiệm, nhưng nó đáng để đầu tư vào sức khỏe và hiệu suất của bạn.`,
     author: 'Sarah Johnson',
-    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80&auto=format&fit=crop',
     category: 'Chạy Bộ',
     tags: ['running', 'shoes', 'guide', 'fitness'],
     createdAt: '2024-01-15',
@@ -72,7 +72,7 @@ Khi chọn giày bóng rổ, hãy cân nhắc:
 
 Giày bóng rổ tốt nhất là giày cung cấp hiệu suất bạn cần trong khi khiến bạn cảm thấy tự tin và thoải mái.`,
     author: 'Michael Chen',
-    image: 'https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=800&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1200&q=80&auto=format&fit=crop',
     category: 'Bóng Rổ',
     tags: ['basketball', 'performance', 'style', 'shoes'],
     createdAt: '2024-01-10',
@@ -115,7 +115,7 @@ Bắt đầu với các sneaker bạn thực sự yêu thích mặc, không ch�
 
 Khi bộ sưu tập của bạn phát triển, hãy xem xét các chủ đề hoặc các thương hiệu cụ thể để tập trung vào, điều này có thể giúp bộ sưu tập của bạn có sự liên kết chặt chẽ hơn.`,
     author: 'Emma Williams',
-    image: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=80&auto=format&fit=crop',
     category: 'Thời Trang',
     tags: ['collecting', 'sneakers', 'lifestyle', 'tips'],
     createdAt: '2024-01-05',
@@ -147,7 +147,7 @@ Một số bản phát hành được mong đợi nhất bao gồm các phối h
 
 Hãy chắc chắn theo dõi các kênh thương hiệu chính thức và các trang web tin tức sneaker có uy tín để cập nhật ngày phát hành và tính khả dụng.`,
     author: 'Alex Martinez',
-    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=1200&q=80&auto=format&fit=crop',
     category: 'Tin Tức',
     tags: ['releases', '2024', 'new', 'news'],
     createdAt: '2024-01-01',
