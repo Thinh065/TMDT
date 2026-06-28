@@ -1,17 +1,19 @@
 import Link from 'next/link';
+import { use } from 'react';
 import { mockBlogPosts } from '@/lib/data/blog-posts';
 import { Button } from '@/components/ui/button';
 import { formatDate } from '@/lib/utils/formatting';
 import { ArrowLeft, Calendar, User } from 'lucide-react';
 
 interface BlogDetailPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default function BlogDetailPage({ params }: BlogDetailPageProps) {
-  const post = mockBlogPosts.find((p) => p.slug === params.slug);
+  const { slug } = use(params);
+  const post = mockBlogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     return (

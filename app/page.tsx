@@ -2,10 +2,13 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { mockProducts } from '@/lib/data/products';
 import ProductCard from '@/components/shop/product-card';
+import { mockBlogPosts } from '@/lib/data/blog-posts';
+import { formatDate } from '@/lib/utils/formatting';
 import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   const featuredProducts = mockProducts.filter((p) => p.featured).slice(0, 4);
+  const featuredBlogPosts = mockBlogPosts.slice(0, 4);
 
   return (
     <div className="w-full">
@@ -133,6 +136,77 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Blog Posts Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-accent font-semibold uppercase tracking-widest mb-2">Blog SOLE</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Bài Viết Nổi Bật</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Cập nhật thông tin mới nhất về xu hướng sneaker, hướng dẫn chọn giày và tin tức từ cộng đồng.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredBlogPosts.map((post) => (
+              <article
+                key={post.id}
+                className="group bg-card border border-border rounded-lg overflow-hidden hover:border-accent transition-all hover:shadow-lg"
+              >
+                {/* Image */}
+                <Link href={`/blog/${post.slug}`}>
+                  <div className="relative aspect-video overflow-hidden bg-secondary">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 left-4 bg-accent/90 px-3 py-1 rounded-full text-xs font-semibold text-black">
+                      {post.category}
+                    </div>
+                  </div>
+                </Link>
+
+                {/* Content */}
+                <div className="p-6 space-y-4">
+                  <div>
+                    <p className="text-xs text-muted-foreground font-semibold uppercase tracking-widest mb-2">
+                      {post.author}
+                    </p>
+                    <Link href={`/blog/${post.slug}`} className="group/title">
+                      <h3 className="text-lg font-bold text-foreground group-hover/title:text-accent transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+                    </Link>
+                  </div>
+
+                  <p className="text-muted-foreground line-clamp-2 text-sm">{post.excerpt}</p>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-border">
+                    <p className="text-xs text-muted-foreground">{formatDate(post.createdAt)}</p>
+                    <Link href={`/blog/${post.slug}`}>
+                      <Button variant="ghost" size="sm" className="text-accent hover:text-accent">
+                        Đọc Thêm
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/blog">
+              <Button size="lg" className="bg-accent text-black hover:bg-accent/90">
+                Xem Tất Cả Bài Viết
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
