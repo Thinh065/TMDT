@@ -9,32 +9,32 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold text-accent mb-4">SOLE</h3>
             <p className="text-muted-foreground text-sm">
-              Premium footwear for every lifestyle. Discover the latest sneakers and athletic shoes from top brands.
+              Giày chất lượng cao cho mọi phong cách sống. Khám phá các sneaker và giày thể thao mới nhất từ các thương hiệu hàng đầu.
             </p>
           </div>
 
           {/* Shop */}
           <div>
-            <h4 className="font-semibold mb-4">Shop</h4>
+            <h4 className="font-semibold mb-4">Cửa Hàng</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="/shop" className="hover:text-accent transition-colors">
-                  All Products
+                  Tất Cả Sản Phẩm
                 </Link>
               </li>
               <li>
                 <Link href="/shop?category=running" className="hover:text-accent transition-colors">
-                  Running
+                  Chạy Bộ
                 </Link>
               </li>
               <li>
                 <Link href="/shop?category=basketball" className="hover:text-accent transition-colors">
-                  Basketball
+                  Bóng Rổ
                 </Link>
               </li>
               <li>
                 <Link href="/shop?category=casual" className="hover:text-accent transition-colors">
-                  Casual
+                  Dạo Phố
                 </Link>
               </li>
             </ul>
@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4">Công Ty</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="/blog" className="hover:text-accent transition-colors">
@@ -51,17 +51,17 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#" className="hover:text-accent transition-colors">
-                  About Us
+                  Giới Thiệu
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-accent transition-colors">
-                  Contact
+                  Liên Hệ
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-accent transition-colors">
-                  Careers
+                  Tuyển Dụng
                 </Link>
               </li>
             </ul>
@@ -69,26 +69,26 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h4 className="font-semibold mb-4">Support</h4>
+            <h4 className="font-semibold mb-4">Hỗ Trợ</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="#" className="hover:text-accent transition-colors">
-                  Shipping Info
+                  Thông Tin Vận Chuyển
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-accent transition-colors">
-                  Returns
+                  Trả Lại Hàng
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-accent transition-colors">
-                  FAQ
+                  Câu Hỏi Thường Gặp
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-accent transition-colors">
-                  Privacy Policy
+                  Chính Sách Bảo Mật
                 </Link>
               </li>
             </ul>
@@ -97,7 +97,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 SOLE. All rights reserved. Made with v0.</p>
+          <p>&copy; 2024 SOLE. Bảo lưu tất cả các quyền. Được tạo bằng v0.</p>
         </div>
       </div>
     </footer>

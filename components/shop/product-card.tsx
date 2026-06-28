@@ -124,12 +124,12 @@ export default function ProductCard({ product }: ProductCardProps) {
           onClick={handleAddToCart}
           className="w-full bg-accent text-black hover:bg-accent/90 font-semibold"
         >
-          Add to Cart
+          Thêm Vào Giỏ
         </Button>
 
         {/* View Details Link */}
         <Link href={`/shop/${product.id}`} className="block w-full text-center py-2 text-xs text-accent hover:underline">
-          View Details
+          Xem Chi Tiết
         </Link>
       </div>
     </div>

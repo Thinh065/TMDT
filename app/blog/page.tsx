@@ -12,10 +12,10 @@ export default function BlogPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-black via-gray-900 to-black py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-accent font-semibold uppercase tracking-widest">Sneaker Culture</p>
-          <h1 className="text-5xl md:text-6xl font-bold text-white">SOLE Blog</h1>
+          <p className="text-accent font-semibold uppercase tracking-widest">Văn Hóa Sneaker</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-white">Blog SOLE</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Insights, guides, and news about sneakers, running, and sneaker culture.
+            Thông tin chi tiết, hướng dẫn và tin tức về sneaker, chạy bộ và văn hóa sneaker.
           </p>
         </div>
       </section>
@@ -62,7 +62,7 @@ export default function BlogPage() {
                     <p className="text-xs text-muted-foreground">{formatDate(post.createdAt)}</p>
                     <Link href={`/blog/${post.slug}`}>
                       <Button variant="ghost" size="sm" className="text-accent hover:text-accent">
-                        Read More
+                        Đọc Thêm
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </Link>

@@ -45,7 +45,7 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-accent mb-2">SOLE</h1>
-          <p className="text-muted-foreground">Sign in to your account</p>
+          <p className="text-muted-foreground">Đăng nhập vào tài khoản của bạn</p>
         </div>
 
         {/* Form */}
@@ -58,7 +58,7 @@ export default function LoginPage() {
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-              Email Address
+              Địa Chỉ Email
             </label>
             <input
               id="email"
@@ -74,7 +74,7 @@ export default function LoginPage() {
 
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2">
-              Password
+              Mật Khẩu
             </label>
             <input
               id="password"
@@ -93,20 +93,20 @@ export default function LoginPage() {
             disabled={isLoading}
             className="w-full bg-accent text-black hover:bg-accent/90 font-semibold py-3"
           >
-            {isLoading ? 'Signing in...' : 'Sign In'}
+            {isLoading ? 'Đang Đăng Nhập...' : 'Đăng Nhập'}
           </Button>
 
           <div className="text-center">
-            <span className="text-muted-foreground">Don&apos;t have an account? </span>
+            <span className="text-muted-foreground">Chưa có tài khoản? </span>
             <Link href="/auth/register" className="text-accent hover:underline font-medium">
-              Sign up
+              Đăng ký
             </Link>
           </div>
         </form>
 
         {/* Demo Info */}
         <div className="mt-8 bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 text-sm text-blue-400">
-          Demo Mode: Use any email and password to sign in. Your session will be stored locally.
+          Chế Độ Demo: Sử dụng bất kỳ email và mật khẩu nào để đăng nhập. Phiên của bạn sẽ được lưu trữ cục bộ.
         </div>
       </div>
     </div>

@@ -78,19 +78,19 @@ export default function OrdersPage() {
                 <Link href="/account" className="block">
                   <Button variant="outline" className="w-full justify-start">
                     <User className="w-4 h-4 mr-3" />
-                    Profile
+                    Hồ Sơ
                   </Button>
                 </Link>
                 <Link href="/account/orders" className="block">
                   <Button variant="default" className="w-full justify-start bg-accent text-black">
                     <ShoppingBag className="w-4 h-4 mr-3" />
-                    Orders
+                    Đơn Hàng
                   </Button>
                 </Link>
                 <Link href="/account/favorites" className="block">
                   <Button variant="outline" className="w-full justify-start">
                     <Heart className="w-4 h-4 mr-3" />
-                    Favorites
+                    Yêu Thích
                   </Button>
                 </Link>
               </nav>
@@ -101,22 +101,22 @@ export default function OrdersPage() {
                 className="w-full justify-start text-red-400 border-red-400/20 hover:bg-red-400/10"
               >
                 <LogOut className="w-4 h-4 mr-3" />
-                Logout
+                Đăng Xuất
               </Button>
             </div>
           </div>
 
           {/* Main Content */}
           <div className="flex-1">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Order History</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-8">Lịch Sử Đơn Hàng</h2>
 
             {orders.length === 0 ? (
               <div className="bg-card border border-border rounded-lg p-8 text-center">
                 <ShoppingBag className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-foreground text-lg font-semibold mb-2">No orders yet</p>
-                <p className="text-muted-foreground mb-6">Start shopping to place your first order</p>
+                <p className="text-foreground text-lg font-semibold mb-2">Chưa có đơn hàng nào</p>
+                <p className="text-muted-foreground mb-6">Bắt đầu mua sắm để đặt đơn hàng đầu tiên của bạn</p>
                 <Link href="/shop">
-                  <Button className="bg-accent text-black hover:bg-accent/90">Continue Shopping</Button>
+                  <Button className="bg-accent text-black hover:bg-accent/90">Tiếp Tục Mua Sắm</Button>
                 </Link>
               </div>
             ) : (
@@ -125,7 +125,7 @@ export default function OrdersPage() {
                   <div key={order.id} className="bg-card border border-border rounded-lg p-6">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
                       <div>
-                        <p className="text-sm text-muted-foreground">Order ID</p>
+                        <p className="text-sm text-muted-foreground">ID Đơn Hàng</p>
                         <p className="text-lg font-semibold text-accent">{order.id}</p>
                       </div>
                       <div className={`px-4 py-2 rounded-lg border ${getStatusColor(order.status)}`}>
@@ -135,27 +135,27 @@ export default function OrdersPage() {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 py-4 border-t border-border">
                       <div>
-                        <p className="text-sm text-muted-foreground">Date</p>
-                        <p className="text-foreground">{new Date(order.createdAt).toLocaleDateString()}</p>
+                        <p className="text-sm text-muted-foreground">Ngày</p>
+                        <p className="text-foreground">{new Date(order.createdAt).toLocaleDateString('vi-VN')}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground">Items</p>
-                        <p className="text-foreground">{order.items.length} item(s)</p>
+                        <p className="text-sm text-muted-foreground">Mục</p>
+                        <p className="text-foreground">{order.items.length} mục</p>
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground">Total</p>
+                        <p className="text-sm text-muted-foreground">Tổng Cộng</p>
                         <p className="text-lg font-semibold text-accent">{formatPrice(order.totalPrice)}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground">Est. Delivery</p>
+                        <p className="text-sm text-muted-foreground">Dự Kiến Giao Hàng</p>
                         <p className="text-foreground">
-                          {order.estimatedDelivery ? new Date(order.estimatedDelivery).toLocaleDateString() : 'N/A'}
+                          {order.estimatedDelivery ? new Date(order.estimatedDelivery).toLocaleDateString('vi-VN') : 'N/A'}
                         </p>
                       </div>
                     </div>
 
                     <div className="bg-secondary rounded-lg p-4 text-sm">
-                      <p className="text-muted-foreground">Shipping Address</p>
+                      <p className="text-muted-foreground">Địa Chỉ Giao Hàng</p>
                       <p className="text-foreground">{order.shippingAddress}</p>
                     </div>
                   </div>

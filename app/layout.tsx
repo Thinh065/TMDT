@@ -13,8 +13,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'SOLE - Premium Shoe Store',
-  description: 'Discover the latest sneakers and athletic shoes from top brands',
+  title: 'SOLE - Cửa Hàng Giày Cao Cấp',
+  description: 'Khám phá những đôi giày sneaker và giày thể thao mới nhất từ các thương hiệu hàng đầu',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="vi" className="dark">
       <body className="font-sans antialiased bg-background text-foreground">
         <AuthProvider>
           <CartProvider>

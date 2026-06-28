@@ -45,19 +45,19 @@ export default function AccountPage() {
                 <Link href="/account" className="block">
                   <Button variant="default" className="w-full justify-start bg-accent text-black">
                     <User className="w-4 h-4 mr-3" />
-                    Profile
+                    Hồ Sơ
                   </Button>
                 </Link>
                 <Link href="/account/orders" className="block">
                   <Button variant="outline" className="w-full justify-start">
                     <ShoppingBag className="w-4 h-4 mr-3" />
-                    Orders
+                    Đơn Hàng
                   </Button>
                 </Link>
                 <Link href="/account/favorites" className="block">
                   <Button variant="outline" className="w-full justify-start">
                     <Heart className="w-4 h-4 mr-3" />
-                    Favorites
+                    Yêu Thích
                   </Button>
                 </Link>
               </nav>
@@ -68,7 +68,7 @@ export default function AccountPage() {
                 className="w-full justify-start text-red-400 border-red-400/20 hover:bg-red-400/10"
               >
                 <LogOut className="w-4 h-4 mr-3" />
-                Logout
+                Đăng Xuất
               </Button>
             </div>
           </div>
@@ -76,11 +76,11 @@ export default function AccountPage() {
           {/* Main Content */}
           <div className="flex-1">
             <div className="bg-card border border-border rounded-lg p-8">
-              <h2 className="text-3xl font-bold text-foreground mb-8">Profile Information</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-8">Thông Tin Hồ Sơ</h2>
 
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-muted-foreground mb-2">Name</label>
+                  <label className="block text-sm font-medium text-muted-foreground mb-2">Tên</label>
                   <p className="text-lg text-foreground">{user.name}</p>
                 </div>
 
@@ -91,14 +91,14 @@ export default function AccountPage() {
 
                 {user.phone && (
                   <div>
-                    <label className="block text-sm font-medium text-muted-foreground mb-2">Phone</label>
+                    <label className="block text-sm font-medium text-muted-foreground mb-2">Điện Thoại</label>
                     <p className="text-lg text-foreground">{user.phone}</p>
                   </div>
                 )}
 
                 {user.address && (
                   <div>
-                    <label className="block text-sm font-medium text-muted-foreground mb-2">Address</label>
+                    <label className="block text-sm font-medium text-muted-foreground mb-2">Địa Chỉ</label>
                     <p className="text-lg text-foreground">
                       {user.address}, {user.city} {user.zipCode}
                     </p>
@@ -107,13 +107,13 @@ export default function AccountPage() {
 
                 {!user.address && (
                   <div className="bg-secondary border border-border rounded-lg p-4">
-                    <p className="text-muted-foreground text-sm mb-4">No shipping address saved. Add one during checkout.</p>
+                    <p className="text-muted-foreground text-sm mb-4">Không có địa chỉ giao hàng nào được lưu. Thêm một địa chỉ trong quá trình thanh toán.</p>
                   </div>
                 )}
 
                 <div>
-                  <label className="block text-sm font-medium text-muted-foreground mb-2">Member Since</label>
-                  <p className="text-lg text-foreground">{new Date(user.createdAt).toLocaleDateString()}</p>
+                  <label className="block text-sm font-medium text-muted-foreground mb-2">Là Thành Viên Từ</label>
+                  <p className="text-lg text-foreground">{new Date(user.createdAt).toLocaleDateString('vi-VN')}</p>
                 </div>
               </div>
             </div>

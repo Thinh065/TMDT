@@ -46,7 +46,7 @@ export default function CheckoutPage() {
     e.preventDefault();
 
     if (!formData.address || !formData.city || !formData.zipCode) {
-      alert('Please fill in all required fields');
+      alert('Vui lòng điền vào tất cả các trường bắt buộc');
       return;
     }
 
@@ -98,25 +98,25 @@ export default function CheckoutPage() {
           </div>
 
           <div>
-            <h1 className="text-4xl font-bold text-foreground mb-2">Order Confirmed!</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-2">Đơn Hàng Được Xác Nhận!</h1>
             <p className="text-muted-foreground text-lg">
-              Thank you for your purchase. Your order has been placed successfully.
+              Cảm ơn bạn đã mua hàng. Đơn hàng của bạn đã được đặt thành công.
             </p>
           </div>
 
           <div className="bg-card border border-border rounded-lg p-6 text-left space-y-4">
             <div>
-              <p className="text-sm text-muted-foreground">Order ID</p>
+              <p className="text-sm text-muted-foreground">ID Đơn Hàng</p>
               <p className="text-lg font-semibold text-accent">{orderId}</p>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Estimated Delivery</p>
+              <p className="text-sm text-muted-foreground">Dự Kiến Giao Hàng</p>
               <p className="text-lg font-semibold text-foreground">
                 {new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toLocaleDateString()}
               </p>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Shipping Address</p>
+              <p className="text-sm text-muted-foreground">Địa Chỉ Giao Hàng</p>
               <p className="text-lg font-semibold text-foreground">
                 {formData.address}, {formData.city} {formData.zipCode}
               </p>
@@ -126,12 +126,12 @@ export default function CheckoutPage() {
           <div className="space-y-3">
             <Link href="/account/orders" className="block">
               <Button className="w-full bg-accent text-black hover:bg-accent/90 font-semibold">
-                View Order
+                Xem Đơn Hàng
               </Button>
             </Link>
             <Link href="/shop" className="block">
               <Button variant="outline" className="w-full">
-                Continue Shopping
+                Tiếp Tục Mua Sắm
               </Button>
             </Link>
           </div>
@@ -143,7 +143,7 @@ export default function CheckoutPage() {
   return (
     <div className="min-h-screen bg-background py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-foreground mb-12">Checkout</h1>
+        <h1 className="text-4xl font-bold text-foreground mb-12">Thanh Toán</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Checkout Form */}
@@ -151,7 +151,7 @@ export default function CheckoutPage() {
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Contact Info */}
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-6">Shipping Information</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Thông Tin Giao Hàng</h2>
                 <div className="space-y-4">
                   <input
                     type="email"
@@ -167,7 +167,7 @@ export default function CheckoutPage() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="Full Name"
+                    placeholder="Họ và Tên"
                     className="w-full px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent"
                     disabled
                   />
@@ -176,7 +176,7 @@ export default function CheckoutPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="Phone Number"
+                    placeholder="Số Điện Thoại"
                     className="w-full px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent"
                   />
                 </div>
@@ -184,14 +184,14 @@ export default function CheckoutPage() {
 
               {/* Address */}
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-6">Address</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Địa Chỉ</h2>
                 <div className="space-y-4">
                   <input
                     type="text"
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
-                    placeholder="Street Address"
+                    placeholder="Địa Chỉ Đường Phố"
                     required
                     className="w-full px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent"
                   />
@@ -201,7 +201,7 @@ export default function CheckoutPage() {
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
-                      placeholder="City"
+                      placeholder="Thành Phố"
                       required
                       className="w-full px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent"
                     />
@@ -210,7 +210,7 @@ export default function CheckoutPage() {
                       name="zipCode"
                       value={formData.zipCode}
                       onChange={handleInputChange}
-                      placeholder="Zip Code"
+                      placeholder="Mã Bưu Chính"
                       required
                       className="w-full px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent"
                     />
@@ -220,9 +220,9 @@ export default function CheckoutPage() {
 
               {/* Payment Info */}
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-6">Payment Method (Demo)</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Phương Thức Thanh Toán (Demo)</h2>
                 <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-4 text-sm text-blue-400">
-                  This is a demo checkout. Use any card number (e.g., 4242 4242 4242 4242) for testing.
+                  Đây là thanh toán demo. Sử dụng bất kỳ số thẻ nào (ví dụ: 4242 4242 4242 4242) để kiểm tra.
                 </div>
                 <div className="space-y-4">
                   <input
@@ -230,7 +230,7 @@ export default function CheckoutPage() {
                     name="cardName"
                     value={formData.cardName}
                     onChange={handleInputChange}
-                    placeholder="Cardholder Name"
+                    placeholder="Tên Chủ Thẻ"
                     className="w-full px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent"
                   />
                   <input
@@ -238,7 +238,7 @@ export default function CheckoutPage() {
                     name="cardNumber"
                     value={formData.cardNumber}
                     onChange={handleInputChange}
-                    placeholder="Card Number"
+                    placeholder="Số Thẻ"
                     maxLength="19"
                     className="w-full px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent"
                   />

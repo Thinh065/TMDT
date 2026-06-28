@@ -33,14 +33,14 @@ export default function CartPage() {
       <div className="min-h-screen bg-background py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-16">
-            <h1 className="text-4xl font-bold text-foreground mb-4">Your Cart is Empty</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-4">Giỏ Hàng Của Bạn Trống</h1>
             <p className="text-muted-foreground text-lg mb-8">
-              Looks like you haven&apos;t added anything yet. Start shopping!
+              Có vẻ như bạn chưa thêm bất cứ thứ gì. Bắt đầu mua sắm!
             </p>
             <Link href="/shop">
               <Button size="lg" className="bg-accent text-black hover:bg-accent/90">
                 <ArrowLeft className="w-5 h-5 mr-2" />
-                Continue Shopping
+                Tiếp Tục Mua Sắm
               </Button>
             </Link>
           </div>
@@ -55,9 +55,9 @@ export default function CartPage() {
         <div className="mb-8">
           <Link href="/shop" className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors">
             <ArrowLeft className="w-4 h-4" />
-            Continue Shopping
+            Tiếp Tục Mua Sắm
           </Link>
-          <h1 className="text-4xl font-bold text-foreground mt-4">Shopping Cart</h1>
+          <h1 className="text-4xl font-bold text-foreground mt-4">Giỏ Hàng</h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -85,7 +85,7 @@ export default function CartPage() {
                         <h3 className="text-lg font-semibold text-foreground mb-2">{product.name}</h3>
                       </Link>
                       <p className="text-sm text-muted-foreground mb-2">
-                        Color: <span className="text-foreground font-medium">{item.selectedColor}</span> | Size:{' '}
+                        Màu sắc: <span className="text-foreground font-medium">{item.selectedColor}</span> | Kích cỡ:{' '}
                         <span className="text-foreground font-medium">{item.selectedSize}</span>
                       </p>
                       <p className="text-lg font-bold text-accent">{formatPrice(product.price)}</p>
@@ -140,31 +140,31 @@ export default function CartPage() {
 
           {/* Order Summary */}
           <div className="h-fit sticky top-20 bg-card border border-border rounded-lg p-6 space-y-6">
-            <h2 className="text-2xl font-bold text-foreground">Order Summary</h2>
+            <h2 className="text-2xl font-bold text-foreground">Tóm Tắt Đơn Hàng</h2>
 
             <div className="space-y-3 border-b border-border pb-6">
               <div className="flex justify-between text-muted-foreground">
-                <span>Subtotal</span>
+                <span>Tổng Phụ</span>
                 <span>{formatPrice(cart.totalPrice)}</span>
               </div>
               <div className="flex justify-between text-muted-foreground">
-                <span>Shipping</span>
-                <span>{shipping === 0 ? 'Free' : formatPrice(shipping)}</span>
+                <span>Giao Hàng</span>
+                <span>{shipping === 0 ? 'Miễn Phí' : formatPrice(shipping)}</span>
               </div>
               <div className="flex justify-between text-muted-foreground">
-                <span>Tax (estimated)</span>
+                <span>Thuế (ước tính)</span>
                 <span>{formatPrice(tax)}</span>
               </div>
             </div>
 
             <div className="flex justify-between text-xl font-bold text-foreground">
-              <span>Total</span>
+              <span>Tổng Cộng</span>
               <span className="text-accent">{formatPrice(total)}</span>
             </div>
 
             {shipping === 0 && (
               <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3 text-sm text-green-400">
-                Free shipping! Order qualifies for free shipping.
+                Giao hàng miễn phí! Đơn hàng của bạn đủ điều kiện giao hàng miễn phí.
               </div>
             )}
 
@@ -172,7 +172,7 @@ export default function CartPage() {
               onClick={handleCheckout}
               className="w-full bg-accent text-black hover:bg-accent/90 font-semibold py-6 text-base"
             >
-              Proceed to Checkout
+              Tiến Hành Thanh Toán
             </Button>
 
             <Button
@@ -180,7 +180,7 @@ export default function CartPage() {
               onClick={clearCart}
               className="w-full"
             >
-              Clear Cart
+              Xóa Giỏ Hàng
             </Button>
           </div>
         </div>

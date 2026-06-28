@@ -51,19 +51,19 @@ export default function FavoritesPage() {
                 <Link href="/account" className="block">
                   <Button variant="outline" className="w-full justify-start">
                     <User className="w-4 h-4 mr-3" />
-                    Profile
+                    Hồ Sơ
                   </Button>
                 </Link>
                 <Link href="/account/orders" className="block">
                   <Button variant="outline" className="w-full justify-start">
                     <ShoppingBag className="w-4 h-4 mr-3" />
-                    Orders
+                    Đơn Hàng
                   </Button>
                 </Link>
                 <Link href="/account/favorites" className="block">
                   <Button variant="default" className="w-full justify-start bg-accent text-black">
                     <Heart className="w-4 h-4 mr-3" />
-                    Favorites
+                    Yêu Thích
                   </Button>
                 </Link>
               </nav>
@@ -74,22 +74,22 @@ export default function FavoritesPage() {
                 className="w-full justify-start text-red-400 border-red-400/20 hover:bg-red-400/10"
               >
                 <LogOut className="w-4 h-4 mr-3" />
-                Logout
+                Đăng Xuất
               </Button>
             </div>
           </div>
 
           {/* Main Content */}
           <div className="flex-1">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Favorite Products</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-8">Sản Phẩm Yêu Thích</h2>
 
             {favoriteProducts.length === 0 ? (
               <div className="bg-card border border-border rounded-lg p-8 text-center">
                 <Heart className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-foreground text-lg font-semibold mb-2">No favorites yet</p>
-                <p className="text-muted-foreground mb-6">Start adding your favorite shoes to your wishlist</p>
+                <p className="text-foreground text-lg font-semibold mb-2">Chưa có sản phẩm yêu thích nào</p>
+                <p className="text-muted-foreground mb-6">Bắt đầu thêm giày yêu thích của bạn vào danh sách yêu thích</p>
                 <Link href="/shop">
-                  <Button className="bg-accent text-black hover:bg-accent/90">Browse Products</Button>
+                  <Button className="bg-accent text-black hover:bg-accent/90">Xem Sản Phẩm</Button>
                 </Link>
               </div>
             ) : (

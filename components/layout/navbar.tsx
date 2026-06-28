@@ -21,8 +21,8 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/shop', label: 'Shop' },
+    { href: '/', label: 'Trang Chủ' },
+    { href: '/shop', label: 'Cửa Hàng' },
     { href: '/blog', label: 'Blog' },
   ];
 
@@ -75,19 +75,19 @@ export default function Navbar() {
                   className="flex items-center gap-2"
                 >
                   <LogOut className="w-4 h-4" />
-                  Logout
+                  Đăng Xuất
                 </Button>
               </>
             ) : (
               <>
                 <Link href="/auth/login">
                   <Button variant="outline" size="sm">
-                    Login
+                    Đăng Nhập
                   </Button>
                 </Link>
                 <Link href="/auth/register">
                   <Button size="sm" className="bg-accent text-black hover:bg-accent/90">
-                    Sign Up
+                    Đăng Ký
                   </Button>
                 </Link>
               </>

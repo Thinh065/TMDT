@@ -30,9 +30,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-foreground mb-4">Product not found</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-4">Sản Phẩm Không Tìm Thấy</h1>
           <Link href="/shop">
-            <Button>Back to Shop</Button>
+            <Button>Quay Lại Cửa Hàng</Button>
           </Link>
         </div>
       </div>
@@ -67,11 +67,11 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
-            Home
+            Trang Chủ
           </Link>
           <span>/</span>
           <Link href="/shop" className="hover:text-foreground">
-            Shop
+            Cửa Hàng
           </Link>
           <span>/</span>
           <span className="text-foreground">{product.name}</span>
@@ -127,7 +127,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                   ))}
                 </div>
                 <span className="text-sm text-muted-foreground">
-                  {product.rating} ({product.reviewCount} reviews)
+                  {product.rating} ({product.reviewCount} đánh giá)
                 </span>
               </div>
 
@@ -144,22 +144,22 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
               {/* Stock Status */}
               <div className="flex items-center gap-2">
                 <span className={`text-sm font-semibold ${product.inStock ? 'text-green-400' : 'text-red-400'}`}>
-                  {product.inStock ? `${product.stockCount} in stock` : 'Out of stock'}
+                  {product.inStock ? `${product.stockCount} còn hàng` : 'Hết Hàng'}
                 </span>
               </div>
             </div>
 
             {/* Description */}
             <div>
-              <h3 className="text-lg font-semibold text-foreground mb-3">About this product</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Về Sản Phẩm Này</h3>
               <p className="text-muted-foreground leading-relaxed">{product.description}</p>
 
               <div className="mt-4 space-y-2 text-sm">
                 <p className="text-muted-foreground">
-                  <span className="text-foreground font-semibold">Material:</span> {product.material}
+                  <span className="text-foreground font-semibold">Vật Liệu:</span> {product.material}
                 </p>
                 <p className="text-muted-foreground">
-                  <span className="text-foreground font-semibold">Category:</span> {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
+                  <span className="text-foreground font-semibold">Danh Mục:</span> {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
                 </p>
               </div>
             </div>
@@ -168,7 +168,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             <div className="space-y-6 border-t border-b border-border py-6">
               {/* Color Selection */}
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-4">Select Color</label>
+                <label className="block text-sm font-semibold text-foreground mb-4">Chọn Màu Sắc</label>
                 <div className="flex flex-wrap gap-3">
                   {product.colors.map((color) => (
                     <button
@@ -204,7 +204,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
               {/* Size Selection */}
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-4">Select Size</label>
+                <label className="block text-sm font-semibold text-foreground mb-4">Chọn Kích Cỡ</label>
                 <div className="grid grid-cols-5 gap-2">
                   {product.sizes.map((size) => (
                     <button
@@ -224,7 +224,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
               {/* Quantity */}
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-4">Quantity</label>
+                <label className="block text-sm font-semibold text-foreground mb-4">Số Lượng</label>
                 <div className="flex items-center gap-4">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -253,12 +253,12 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                 {addedToCart ? (
                   <>
                     <Check className="w-5 h-5 mr-2" />
-                    Added to Cart
+                    Đã Thêm Vào Giỏ
                   </>
                 ) : (
                   <>
                     <ShoppingCart className="w-5 h-5 mr-2" />
-                    Add to Cart
+                    Thêm Vào Giỏ
                   </>
                 )}
               </Button>
@@ -281,7 +281,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
       {relatedProducts.length > 0 && (
         <section className="py-12 border-t border-border bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Related Products</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-8">Sản Phẩm Liên Quan</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedProducts.map((p) => (
                 <ProductCard key={p.id} product={p} />

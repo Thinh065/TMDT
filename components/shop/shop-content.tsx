@@ -62,12 +62,12 @@ export default function ShopContent() {
   };
 
   const categories = [
-    { value: '', label: 'All Categories' },
-    { value: 'running', label: 'Running' },
-    { value: 'basketball', label: 'Basketball' },
-    { value: 'casual', label: 'Casual' },
-    { value: 'lifestyle', label: 'Lifestyle' },
-    { value: 'training', label: 'Training' },
+    { value: '', label: 'Tất Cả Danh Mục' },
+    { value: 'running', label: 'Chạy Bộ' },
+    { value: 'basketball', label: 'Bóng Rổ' },
+    { value: 'casual', label: 'Dạo Phố' },
+    { value: 'lifestyle', label: 'Thời Trang' },
+    { value: 'training', label: 'Huấn Luyện' },
   ];
 
   return (
@@ -76,7 +76,7 @@ export default function ShopContent() {
       <div className="mb-8">
         <input
           type="text"
-          placeholder="Search by product name or brand..."
+          placeholder="Tìm kiếm theo tên sản phẩm hoặc thương hiệu..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="w-full px-6 py-3 bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
@@ -93,13 +93,13 @@ export default function ShopContent() {
                 onClick={() => setShowFilters(false)}
                 className="lg:hidden text-muted-foreground hover:text-foreground"
               >
-                ✕ Close Filters
+                ✕ Đóng Bộ Lọc
               </button>
             )}
 
             {/* Category Filter */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4">Category</h3>
+              <h3 className="font-semibold text-foreground mb-4">Danh Mục</h3>
               <div className="space-y-2">
                 {categories.map((cat) => (
                   <button
@@ -119,7 +119,7 @@ export default function ShopContent() {
 
             {/* Brand Filter */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4">Brand</h3>
+              <h3 className="font-semibold text-foreground mb-4">Thương Hiệu</h3>
               <div className="space-y-2">
                 {brands.map((brand) => (
                   <label key={brand} className="flex items-center gap-3 cursor-pointer group">
@@ -139,7 +139,7 @@ export default function ShopContent() {
 
             {/* Price Filter */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4">Price Range</h3>
+              <h3 className="font-semibold text-foreground mb-4">Khoảng Giá</h3>
               <div className="space-y-4">
                 <div>
                   <label className="text-sm text-muted-foreground">

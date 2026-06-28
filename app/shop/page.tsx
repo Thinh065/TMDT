@@ -8,9 +8,9 @@ export default function ShopPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">Shop All Products</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">Xem Tất Cả Sản Phẩm</h1>
           <p className="text-muted-foreground text-lg">
-            Browse our complete collection of premium sneakers and athletic shoes
+            Duyệt bộ sưu tập hoàn chỉnh các sneaker chất lượng cao và giày thể thao của chúng tôi
           </p>
         </div>
 

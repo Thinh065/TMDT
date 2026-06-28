@@ -3,37 +3,37 @@ import { BlogPost } from '../types/blog';
 export const mockBlogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'The Ultimate Guide to Choosing Running Shoes',
+    title: 'Hướng Dẫn Toàn Diện Để Chọn Giày Chạy Bộ',
     slug: 'ultimate-guide-choosing-running-shoes',
-    excerpt: 'Learn how to select the perfect running shoes based on your gait, foot type, and running style.',
-    content: `Running shoes are one of the most important pieces of gear for any runner. Whether you're just starting out or training for a marathon, choosing the right shoes can make all the difference in your performance and comfort.
+    excerpt: 'Tìm hiểu cách chọn giày chạy bộ hoàn hảo dựa trên cách bước, loại bàn chân và phong cách chạy của bạn.',
+    content: `Giày chạy bộ là một trong những thiết bị quan trọng nhất cho bất kỳ vận động viên nào. Cho dù bạn mới bắt đầu hay đang huấn luyện cho một cuộc marathon, việc chọn đúng giày có thể tạo nên sự khác biệt rất lớn trong hiệu suất và sự thoải mái của bạn.
 
-In this comprehensive guide, we'll walk you through everything you need to know about selecting running shoes that are perfect for your needs.
+Trong hướng dẫn toàn diện này, chúng tôi sẽ hướng dẫn bạn mọi thứ bạn cần biết về việc chọn giày chạy bộ hoàn hảo cho nhu cầu của bạn.
 
-## Understanding Your Gait
+## Hiểu Cách Bước Chân Của Bạn
 
-The first step in choosing running shoes is understanding your gait. There are three main types of gaits: neutral, overpronation, and supination. Your gait determines how your foot lands and rolls when you run.
+Bước đầu tiên trong việc chọn giày chạy bộ là hiểu cách bước chân của bạn. Có ba loại cách bước chính: trung lập, quá bước chân vào trong và quá bước chân ra ngoài. Cách bước chân của bạn xác định cách bàn chân của bạn tiếp xúc và lăn khi bạn chạy.
 
-## Key Features to Look For
+## Các Tính Năng Chính Cần Tìm
 
-When shopping for running shoes, pay attention to:
+Khi mua sắm giày chạy bộ, hãy chú ý đến:
 
-- **Cushioning**: The amount of shock absorption the shoe provides
-- **Support**: Arch support and stability features
-- **Fit**: The shoe should feel snug but not tight
-- **Weight**: Lighter shoes are better for speed training
-- **Breathability**: Good ventilation to keep your feet cool
+- **Đệm**: Lượng hấp thụ chấn động mà giày cung cấp
+- **Hỗ Trợ**: Hỗ trợ vòm chân và các tính năng ổn định
+- **Vừa Vặn**: Giày nên cảm thấy vừa vặn nhưng không chật
+- **Trọng Lượng**: Giày nhẹ hơn tốt hơn cho huấn luyện tốc độ
+- **Thoáng Khí**: Thông thoáng tốt để giữ chân mát
 
-## Popular Brands
+## Các Thương Hiệu Phổ Biến
 
-Some of the top running shoe brands include Nike, Adidas, Brooks, ASICS, and New Balance. Each brand has their own technologies and designs, so it's worth trying on multiple options.
+Một số thương hiệu giày chạy hàng đầu bao gồm Nike, Adidas, Brooks, ASICS và New Balance. Mỗi thương hiệu có công nghệ và thiết kế riêng của họ, vì vậy cần phải thử nhiều lựa chọn.
 
-## Conclusion
+## Kết Luận
 
-Finding the right running shoes takes time and experimentation, but it's worth the investment in your health and performance.`,
+Tìm giày chạy bộ phù hợp mất thời gian và thử nghiệm, nhưng nó đáng để đầu tư vào sức khỏe và hiệu suất của bạn.`,
     author: 'Sarah Johnson',
     image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=400&fit=crop',
-    category: 'Running',
+    category: 'Chạy Bộ',
     tags: ['running', 'shoes', 'guide', 'fitness'],
     createdAt: '2024-01-15',
     updatedAt: '2024-01-15',
@@ -41,39 +41,39 @@ Finding the right running shoes takes time and experimentation, but it's worth t
   },
   {
     id: '2',
-    title: 'Basketball Shoes: Performance vs Style',
+    title: 'Giày Bóng Rổ: Hiệu Suất vs Phong Cách',
     slug: 'basketball-shoes-performance-vs-style',
-    excerpt: 'Exploring the balance between performance features and style in modern basketball footwear.',
-    content: `Basketball shoes have evolved significantly over the past decade. Today's basketball footwear must balance performance requirements with street style appeal.
+    excerpt: 'Khám phá sự cân bằng giữa các tính năng hiệu suất và phong cách trong giày bóng rổ hiện đại.',
+    content: `Giày bóng rổ đã phát triển đáng kể trong thập kỷ qua. Giày bóng rổ ngày nay phải cân bằng giữa các yêu cầu hiệu suất và sức hấp dẫn của phong cách đường phố.
 
-## Performance Features
+## Các Tính Năng Hiệu Suất
 
-Modern basketball shoes include several key performance features:
+Giày bóng rổ hiện đại bao gồm một số tính năng hiệu suất chính:
 
-- **Ankle Support**: Critical for preventing injuries during quick lateral movements
-- **Cushioning Technology**: Provides shock absorption for jumping and landing
-- **Traction**: The outsole pattern is designed for court-specific grip
-- **Weight**: Professional players prefer lightweight shoes for speed
+- **Hỗ Trợ Cổ Chân**: Rất quan trọng để ngăn chặn chấn thương trong các chuyển động ngang nhanh chóng
+- **Công Nghệ Đệm**: Cung cấp hấp thụ chấn động để nhảy và hạ cánh
+- **Độ Bám**: Mô hình đế ngoài được thiết kế cho độ bám dành riêng cho sân
+- **Trọng Lượng**: Những cầu thủ chuyên nghiệp thích giày nhẹ để tăng tốc
 
-## Style and Culture
+## Phong Cách và Văn Hóa
 
-Basketball shoes have transcended the court to become a major fashion statement. Collaborations between athletes and designers have created iconic sneaker silhouettes that are worn both on and off the court.
+Giày bóng rổ đã vượt ra ngoài sân để trở thành một tuyên bố thời trang lớn. Sự hợp tác giữa các vận động viên và nhà thiết kế đã tạo ra những kiểu dáng sneaker biểu tượng được mặc cả trên và ngoài sân.
 
-Brands like Nike, Adidas, and Jordan Brand invest heavily in design to create shoes that appeal to both athletes and sneaker enthusiasts.
+Những thương hiệu như Nike, Adidas và Jordan Brand đầu tư rất nhiều vào thiết kế để tạo ra những chiếc giày thu hút cả vận động viên và những người yêu thích sneaker.
 
-## Finding the Right Fit
+## Tìm Kiếm Vừa Vặn Phù Hợp
 
-When choosing basketball shoes, consider:
+Khi chọn giày bóng rổ, hãy cân nhắc:
 
-1. Your playing style
-2. The court surface you'll be playing on
-3. Your budget
-4. Your personal style preferences
+1. Phong cách chơi của bạn
+2. Bề mặt sân bạn sẽ chơi
+3. Ngân sách của bạn
+4. Sở thích phong cách cá nhân của bạn
 
-The best basketball shoe is one that provides the performance you need while making you feel confident and comfortable.`,
+Giày bóng rổ tốt nhất là giày cung cấp hiệu suất bạn cần trong khi khiến bạn cảm thấy tự tin và thoải mái.`,
     author: 'Michael Chen',
     image: 'https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=800&h=400&fit=crop',
-    category: 'Basketball',
+    category: 'Bóng Rổ',
     tags: ['basketball', 'performance', 'style', 'shoes'],
     createdAt: '2024-01-10',
     updatedAt: '2024-01-10',
@@ -81,42 +81,42 @@ The best basketball shoe is one that provides the performance you need while mak
   },
   {
     id: '3',
-    title: 'Sneaker Collecting 101: Getting Started',
+    title: 'Sưu Tập Sneaker 101: Bắt Đầu',
     slug: 'sneaker-collecting-getting-started',
-    excerpt: 'A beginner&apos;s guide to building your sneaker collection with tips on storage, authentication, and finding rare releases.',
-    content: `Sneaker collecting has become a serious hobby for millions of people around the world. Whether you're drawn to rare releases, classic silhouettes, or collaborative designs, there's something for everyone in sneaker culture.
+    excerpt: 'Hướng dẫn cho người mới bắt đầu để xây dựng bộ sưu tập sneaker của bạn với các mẹo về bảo quản, xác thực và tìm các phiên bản hiếm.',
+    content: `Sưu tập sneaker đã trở thành một sở thích nghiêm túc cho hàng triệu người trên toàn thế giới. Cho dù bạn bị hút bởi các phiên bản hiếm, kiểu dáng cổ điển hay thiết kế hợp tác, có cái gì đó cho mọi người trong văn hóa sneaker.
 
-## Getting Started
+## Bắt Đầu
 
-The first step in sneaker collecting is identifying what you're passionate about. Do you love a particular brand? Are you interested in vintage sneakers? Or do you prefer limited-edition collaborations?
+Bước đầu tiên trong sưu tập sneaker là xác định những gì bạn đam mê. Bạn có yêu thích một thương hiệu cụ thể không? Bạn có quan tâm đến sneaker vintage không? Hay bạn thích các phối hợp có phiên bản giới hạn?
 
-## Authentication Tips
+## Mẹo Xác Thực
 
-When buying sneakers, especially rare or limited editions, always verify authenticity:
+Khi mua sneaker, đặc biệt là các phiên bản hiếm hoặc giới hạn, luôn xác minh tính xác thực:
 
-- Check the box and labeling carefully
-- Examine the build quality and materials
-- Look for inconsistencies in stitching or printing
-- Use reputable resellers and authentication services
+- Kiểm tra hộp và nhãn dán cẩn thận
+- Kiểm tra chất lượng xây dựng và vật liệu
+- Tìm sự không nhất quán trong khâu hoặc in ấn
+- Sử dụng các nhà bán lại có uy tín và dịch vụ xác thực
 
-## Storage and Care
+## Bảo Quản và Chăm Sóc
 
-Proper storage and care will preserve your collection:
+Lưu trữ và chăm sóc phù hợp sẽ bảo tồn bộ sưu tập của bạn:
 
-1. Keep sneakers in their original boxes
-2. Use acid-free tissue paper
-3. Store in a cool, dry place
-4. Avoid prolonged exposure to sunlight
-5. Clean regularly with appropriate sneaker care products
+1. Giữ sneaker trong hộp gốc của chúng
+2. Sử dụng giấy mỏng không chứa axit
+3. Lưu trữ ở nơi mát, khô ráo
+4. Tránh tiếp xúc kéo dài với ánh sáng mặt trời
+5. Làm sạch thường xuyên bằng các sản phẩm chăm sóc sneaker thích hợp
 
-## Building Your Collection
+## Xây Dựng Bộ Sưu Tập Của Bạn
 
-Start with sneakers you genuinely love wearing, not just collecting. This will make your collection more meaningful and you'll get to enjoy your purchases.
+Bắt đầu với các sneaker bạn thực sự yêu thích mặc, không chỉ sưu tập. Điều này sẽ làm cho bộ sưu tập của bạn có ý nghĩa hơn và bạn sẽ có cơ hội thưởng thức các giao dịch mua của mình.
 
-As your collection grows, consider themes or specific brands to focus on, which can help make your collection more cohesive.`,
+Khi bộ sưu tập của bạn phát triển, hãy xem xét các chủ đề hoặc các thương hiệu cụ thể để tập trung vào, điều này có thể giúp bộ sưu tập của bạn có sự liên kết chặt chẽ hơn.`,
     author: 'Emma Williams',
     image: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&h=400&fit=crop',
-    category: 'Lifestyle',
+    category: 'Thời Trang',
     tags: ['collecting', 'sneakers', 'lifestyle', 'tips'],
     createdAt: '2024-01-05',
     updatedAt: '2024-01-05',
@@ -124,31 +124,31 @@ As your collection grows, consider themes or specific brands to focus on, which 
   },
   {
     id: '4',
-    title: 'New Release Alert: Spring 2024 Collections',
+    title: 'Cảnh Báo Phiên Bản Mới: Bộ Sưu Tập Mùa Xuân 2024',
     slug: 'new-releases-spring-2024',
-    excerpt: 'Check out the hottest new sneaker releases hitting the market this spring season.',
-    content: `Spring 2024 is bringing some incredible new sneaker releases from all the major brands. Here are some of the most anticipated drops you should have on your radar.
+    excerpt: 'Xem các bản phát hành sneaker nóng nhất xuất hiện trên thị trường mùa xuân này.',
+    content: `Mùa xuân 2024 mang đến những bản phát hành sneaker tuyệt vời từ tất cả các thương hiệu chính. Dưới đây là một số bản phát hành được mong đợi nhất mà bạn nên chú ý.
 
-## Nike Spring Releases
+## Phiên Bản Mùa Xuân Của Nike
 
-Nike is launching several new colorways of classic silhouettes, including fresh takes on the Air Max and React series. They're also releasing collaborations with several acclaimed designers.
+Nike đang ra mắt một số lựa chọn màu sắc mới của các kiểu dáng cổ điển, bao gồm các cách tiếp cận mới của dòng Air Max và React. Họ cũng đang phát hành các phối hợp với một số nhà thiết kế nổi tiếng.
 
-## Adidas New Arrivals
+## Những Cái Mới Đến Của Adidas
 
-Adidas is introducing new technologies in their Boost and Ultraboost lines, with emphasis on sustainability and comfort.
+Adidas đang giới thiệu các công nghệ mới trong dòng Boost và Ultraboost của họ, với trọng tâm vào tính bền vững và thoải mái.
 
-## Jordan Brand Updates
+## Cập Nhật Thương Hiệu Jordan
 
-Jordan Brand continues to innovate with the latest LeBron and Jordan models, featuring updated cushioning systems and design elements.
+Thương hiệu Jordan tiếp tục đổi mới với các mô hình LeBron và Jordan mới nhất, với các hệ thống đệm được cập nhật và các phần tử thiết kế.
 
-## Collector's Picks
+## Những Lựa Chọn Của Nhà Sưu Tập
 
-Some of the most anticipated releases include limited-edition collaborations with fashion brands and exclusive drops through select retailers.
+Một số bản phát hành được mong đợi nhất bao gồm các phối hợp có phiên bản giới hạn với các thương hiệu thời trang và các bản phát hành độc quyền thông qua các nhà bán lẻ chọn lọc.
 
-Make sure to follow official brand channels and reputable sneaker news sites to stay updated on release dates and availability.`,
+Hãy chắc chắn theo dõi các kênh thương hiệu chính thức và các trang web tin tức sneaker có uy tín để cập nhật ngày phát hành và tính khả dụng.`,
     author: 'Alex Martinez',
     image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=400&fit=crop',
-    category: 'News',
+    category: 'Tin Tức',
     tags: ['releases', '2024', 'new', 'news'],
     createdAt: '2024-01-01',
     updatedAt: '2024-01-01',

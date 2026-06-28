@@ -31,7 +31,7 @@ export default function RegisterPage() {
     setError('');
 
     if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match');
+      setError('Mật Khẩu Không Trùng Khớp');
       return;
     }
 
@@ -53,7 +53,7 @@ export default function RegisterPage() {
         {/* Logo */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-accent mb-2">SOLE</h1>
-          <p className="text-muted-foreground">Create your account</p>
+          <p className="text-muted-foreground">Tạo tài khoản của bạn</p>
         </div>
 
         {/* Form */}
@@ -66,7 +66,7 @@ export default function RegisterPage() {
 
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-              Full Name
+              Họ và Tên
             </label>
             <input
               id="name"
@@ -82,7 +82,7 @@ export default function RegisterPage() {
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-              Email Address
+              Địa Chỉ Email
             </label>
             <input
               id="email"
@@ -98,7 +98,7 @@ export default function RegisterPage() {
 
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2">
-              Password
+              Mật Khẩu
             </label>
             <input
               id="password"
@@ -114,7 +114,7 @@ export default function RegisterPage() {
 
           <div>
             <label htmlFor="confirmPassword" className="block text-sm font-medium text-foreground mb-2">
-              Confirm Password
+              Xác Nhận Mật Khẩu
             </label>
             <input
               id="confirmPassword"
@@ -133,20 +133,20 @@ export default function RegisterPage() {
             disabled={isLoading}
             className="w-full bg-accent text-black hover:bg-accent/90 font-semibold py-3"
           >
-            {isLoading ? 'Creating account...' : 'Create Account'}
+            {isLoading ? 'Đang Tạo Tài Khoản...' : 'Tạo Tài Khoản'}
           </Button>
 
           <div className="text-center">
-            <span className="text-muted-foreground">Already have an account? </span>
+            <span className="text-muted-foreground">Đã có tài khoản? </span>
             <Link href="/auth/login" className="text-accent hover:underline font-medium">
-              Sign in
+              Đăng nhập
             </Link>
           </div>
         </form>
 
         {/* Demo Info */}
         <div className="mt-8 bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 text-sm text-blue-400">
-          Demo Mode: Create any account with your preferred email. Your session will be stored locally.
+          Chế Độ Demo: Tạo bất kỳ tài khoản nào với email ưa thích của bạn. Phiên của bạn sẽ được lưu trữ cục bộ.
         </div>
       </div>
     </div>

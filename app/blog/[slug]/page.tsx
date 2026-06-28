@@ -17,9 +17,9 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-foreground mb-4">Post not found</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-4">Bài Viết Không Tìm Thấy</h1>
           <Link href="/blog">
-            <Button>Back to Blog</Button>
+            <Button>Quay Lại Blog</Button>
           </Link>
         </div>
       </div>
@@ -36,7 +36,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Link href="/blog" className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" />
-          Back to Blog
+          Quay Lại Blog
         </Link>
       </div>
 
@@ -66,7 +66,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
               <Calendar className="w-4 h-4" />
               <span>{formatDate(post.createdAt)}</span>
             </div>
-            <span className="text-sm">5 min read</span>
+            <span className="text-sm">5 phút đọc</span>
           </div>
         </div>
 
@@ -114,7 +114,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
 
         {/* Tags */}
         <div className="pt-8 border-t border-border space-y-4">
-          <p className="text-sm font-semibold text-foreground">Tags</p>
+          <p className="text-sm font-semibold text-foreground">Thẻ</p>
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span key={tag} className="bg-secondary border border-border px-3 py-1 rounded-full text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -129,7 +129,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
       {relatedPosts.length > 0 && (
         <section className="py-16 border-t border-border bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Related Articles</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-8">Bài Viết Liên Quan</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedPosts.map((relatedPost) => (

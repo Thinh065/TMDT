@@ -34,15 +34,15 @@ export default function AdminPage() {
         {/* Header */}
         <div className="flex justify-between items-center mb-12">
           <div>
-            <h1 className="text-4xl font-bold text-foreground">Admin Dashboard</h1>
-            <p className="text-muted-foreground mt-2">Welcome back, {user.name}</p>
+            <h1 className="text-4xl font-bold text-foreground">Bảng Điều Khiển Admin</h1>
+            <p className="text-muted-foreground mt-2">Chào mừng trở lại, {user.name}</p>
           </div>
           <Button
             variant="outline"
             onClick={handleLogout}
             className="text-red-400 border-red-400/20 hover:bg-red-400/10"
           >
-            Logout
+            Đăng Xuất
           </Button>
         </div>
 
@@ -50,7 +50,7 @@ export default function AdminPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="bg-card border border-border rounded-lg p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-foreground">Total Products</h3>
+              <h3 className="text-lg font-semibold text-foreground">Tổng Sản Phẩm</h3>
               <Package className="w-6 h-6 text-accent" />
             </div>
             <p className="text-3xl font-bold text-accent">{products.length}</p>
@@ -58,7 +58,7 @@ export default function AdminPage() {
 
           <div className="bg-card border border-border rounded-lg p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-foreground">In Stock</h3>
+              <h3 className="text-lg font-semibold text-foreground">Còn Hàng</h3>
               <ShoppingBag className="w-6 h-6 text-green-400" />
             </div>
             <p className="text-3xl font-bold text-green-400">
@@ -68,7 +68,7 @@ export default function AdminPage() {
 
           <div className="bg-card border border-border rounded-lg p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-foreground">Avg Rating</h3>
+              <h3 className="text-lg font-semibold text-foreground">Xếp Hạng Trung Bình</h3>
               <span className="text-xl">⭐</span>
             </div>
             <p className="text-3xl font-bold text-accent">
@@ -80,11 +80,11 @@ export default function AdminPage() {
         {/* Products Management */}
         <div className="bg-card border border-border rounded-lg p-8">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold text-foreground">Products Management</h2>
+            <h2 className="text-2xl font-bold text-foreground">Quản Lý Sản Phẩm</h2>
             <Link href="/admin/products/new">
               <Button className="bg-accent text-black hover:bg-accent/90">
                 <Plus className="w-5 h-5 mr-2" />
-                Add Product
+                Thêm Sản Phẩm
               </Button>
             </Link>
           </div>
@@ -93,12 +93,12 @@ export default function AdminPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-border">
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Product</th>
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Brand</th>
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Price</th>
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Stock</th>
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Rating</th>
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Actions</th>
+                  <th className="text-left py-4 px-4 font-semibold text-foreground">Sản Phẩm</th>
+                  <th className="text-left py-4 px-4 font-semibold text-foreground">Thương Hiệu</th>
+                  <th className="text-left py-4 px-4 font-semibold text-foreground">Giá</th>
+                  <th className="text-left py-4 px-4 font-semibold text-foreground">Kho</th>
+                  <th className="text-left py-4 px-4 font-semibold text-foreground">Xếp Hạng</th>
+                  <th className="text-left py-4 px-4 font-semibold text-foreground">Hành Động</th>
                 </tr>
               </thead>
               <tbody>
@@ -131,7 +131,7 @@ export default function AdminPage() {
           {products.length > 10 && (
             <div className="mt-6 text-center">
               <p className="text-muted-foreground text-sm">
-                Showing 10 of {products.length} products
+                Hiển thị 10 trong {products.length} sản phẩm
               </p>
             </div>
           )}
@@ -141,15 +141,15 @@ export default function AdminPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
           <Link href="/admin/products">
             <div className="bg-card border border-border rounded-lg p-6 hover:border-accent transition-colors cursor-pointer">
-              <h3 className="text-xl font-semibold text-foreground mb-2">All Products</h3>
-              <p className="text-muted-foreground">Manage your entire product catalog</p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Tất Cả Sản Phẩm</h3>
+              <p className="text-muted-foreground">Quản lý toàn bộ danh mục sản phẩm của bạn</p>
             </div>
           </Link>
 
           <Link href="/blog">
             <div className="bg-card border border-border rounded-lg p-6 hover:border-accent transition-colors cursor-pointer">
-              <h3 className="text-xl font-semibold text-foreground mb-2">View Blog</h3>
-              <p className="text-muted-foreground">Read published blog posts</p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Xem Blog</h3>
+              <p className="text-muted-foreground">Đọc các bài đăng đã xuất bản</p>
             </div>
           </Link>
         </div>

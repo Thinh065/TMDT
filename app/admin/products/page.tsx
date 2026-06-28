@@ -31,19 +31,19 @@ export default function ProductsPage() {
           <Link href="/admin">
             <Button variant="outline" size="sm">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
+              Quay Lại
             </Button>
           </Link>
           <div className="flex-1">
-            <h1 className="text-4xl font-bold text-foreground">Manage Products</h1>
+            <h1 className="text-4xl font-bold text-foreground">Quản Lý Sản Phẩm</h1>
             <p className="text-muted-foreground mt-2">
-              Total products: <span className="font-semibold text-accent">{products.length}</span>
+              Tổng sản phẩm: <span className="font-semibold text-accent">{products.length}</span>
             </p>
           </div>
           <Link href="/admin/products/new">
             <Button className="bg-accent text-black hover:bg-accent/90">
               <Plus className="w-5 h-5 mr-2" />
-              Add Product
+              Thêm Sản Phẩm
             </Button>
           </Link>
         </div>
@@ -54,13 +54,13 @@ export default function ProductsPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-border bg-secondary/50">
-                  <th className="text-left py-4 px-6 font-semibold text-foreground">Product</th>
-                  <th className="text-left py-4 px-6 font-semibold text-foreground">Brand</th>
-                  <th className="text-left py-4 px-6 font-semibold text-foreground">Category</th>
-                  <th className="text-right py-4 px-6 font-semibold text-foreground">Price</th>
-                  <th className="text-center py-4 px-6 font-semibold text-foreground">Stock</th>
-                  <th className="text-center py-4 px-6 font-semibold text-foreground">Rating</th>
-                  <th className="text-center py-4 px-6 font-semibold text-foreground">Actions</th>
+                  <th className="text-left py-4 px-6 font-semibold text-foreground">Sản Phẩm</th>
+                  <th className="text-left py-4 px-6 font-semibold text-foreground">Thương Hiệu</th>
+                  <th className="text-left py-4 px-6 font-semibold text-foreground">Danh Mục</th>
+                  <th className="text-right py-4 px-6 font-semibold text-foreground">Giá</th>
+                  <th className="text-center py-4 px-6 font-semibold text-foreground">Kho</th>
+                  <th className="text-center py-4 px-6 font-semibold text-foreground">Xếp Hạng</th>
+                  <th className="text-center py-4 px-6 font-semibold text-foreground">Hành Động</th>
                 </tr>
               </thead>
               <tbody>
@@ -103,7 +103,7 @@ export default function ProductsPage() {
                           variant="ghost"
                           size="sm"
                           onClick={() => {
-                            if (confirm(`Delete ${product.name}?`)) {
+                            if (confirm(`Xóa ${product.name}?`)) {
                               deleteProduct(product.id);
                             }
                           }}
@@ -122,10 +122,10 @@ export default function ProductsPage() {
 
         {products.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-foreground text-lg font-semibold mb-4">No products found</p>
+            <p className="text-foreground text-lg font-semibold mb-4">Không tìm thấy sản phẩm nào</p>
             <Link href="/admin/products/new">
               <Button className="bg-accent text-black hover:bg-accent/90">
-                Create First Product
+                Tạo Sản Phẩm Đầu Tiên
               </Button>
             </Link>
           </div>
