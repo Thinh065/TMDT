@@ -98,6 +98,21 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; 2024 SOLE. Bảo lưu tất cả các quyền. Được tạo bằng v0.</p>
+          <div className="mt-4">
+            <a
+              href="//www.dmca.com/Protection/Status.aspx?ID=8918fe0c-f6ee-4352-865e-32dec76a76a6"
+              title="DMCA.com Protection Status"
+              className="dmca-badge inline-block"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=8918fe0c-f6ee-4352-865e-32dec76a76a6"
+                alt="DMCA.com Protection Status"
+                className="mx-auto"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

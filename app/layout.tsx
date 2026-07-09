@@ -94,6 +94,10 @@ export default function RootLayout({
             />
           </>
         )}
+        <Script
+          strategy="afterInteractive"
+          src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
+        />
       </head>
       <body className="font-sans antialiased bg-background text-foreground">
         <AuthProvider>
