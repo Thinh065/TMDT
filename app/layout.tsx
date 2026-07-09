@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Suspense } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { AuthProvider } from '@/lib/context/auth-context'
@@ -73,12 +72,9 @@ export default function RootLayout({
 
   return (
     <html lang="vi" className="dark">
-      <head>
-        <Suspense fallback={null}>
-          <GoogleAnalytics gaId={gaId} />
-        </Suspense>
-      </head>
+      <head />
       <body className="font-sans antialiased bg-background text-foreground">
+        <GoogleAnalytics gaId={gaId} />
         <AuthProvider>
           <CartProvider>
             <FavoritesProvider>
