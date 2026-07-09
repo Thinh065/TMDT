@@ -73,6 +73,7 @@ export default function RootLayout({
   return (
     <html lang="vi" className="dark">
       <head>
+        <meta name="google-site-verification" content="cR1vzM2PWp9rwnhTUj7_MgKc5y0nbvo8aUDIiF4gT7w" />
         {gaId && (
           <>
             <Script
