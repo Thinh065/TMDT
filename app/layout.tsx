@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
+import { Suspense } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { AuthProvider } from '@/lib/context/auth-context'
@@ -8,6 +8,7 @@ import { FavoritesProvider } from '@/lib/context/favorites-context'
 import { AdminProvider } from '@/lib/context/admin-context'
 import Navbar from '@/components/layout/navbar'
 import Footer from '@/components/layout/footer'
+import { GoogleAnalytics } from '@/components/google-analytics'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -68,32 +69,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || process.env.GA_MEASUREMENT_ID
+
   return (
     <html lang="vi" className="dark">
       <head>
-        {/* Google Analytics */}
-        {process.env.NEXT_PUBLIC_GA_ID && (
-          <>
-            <Script
-              strategy="afterInteractive"
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-            />
-            <Script
-              id="google-analytics"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-                    page_path: window.location.pathname,
-                  });
-                `,
-              }}
-            />
-          </>
-        )}
+        <Suspense fallback={null}>
+          <GoogleAnalytics gaId={gaId} />
+        </Suspense>
       </head>
       <body className="font-sans antialiased bg-background text-foreground">
         <AuthProvider>
