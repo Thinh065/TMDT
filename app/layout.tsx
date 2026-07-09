@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { AuthProvider } from '@/lib/context/auth-context'
@@ -7,7 +8,6 @@ import { FavoritesProvider } from '@/lib/context/favorites-context'
 import { AdminProvider } from '@/lib/context/admin-context'
 import Navbar from '@/components/layout/navbar'
 import Footer from '@/components/layout/footer'
-import { GoogleAnalytics } from '@/components/google-analytics'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -72,9 +72,29 @@ export default function RootLayout({
 
   return (
     <html lang="vi" className="dark">
-      <head />
+      <head>
+        {gaId && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){window.dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}');
+                `,
+              }}
+            />
+          </>
+        )}
+      </head>
       <body className="font-sans antialiased bg-background text-foreground">
-        <GoogleAnalytics gaId={gaId} />
         <AuthProvider>
           <CartProvider>
             <FavoritesProvider>
