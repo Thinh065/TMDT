@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import ShopContent from '@/components/shop/shop-content';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+} from '@/components/ui/breadcrumb';
 import { mockProducts } from '@/lib/data/products';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Cửa Hàng - SOLE | Giày Sneaker & Thể Thao',
-  description: 'Duyệt bộ sưu tập hoàn chỉnh các sneaker chất lượng cao và giày thể thao từ các thương hiệu hàng đầu.',
+  description:
+    'Khám phá bộ sưu tập giày sneaker và giày thể thao chất lượng cao tại SOLE: các mẫu chạy bộ, bóng rổ, lifestyle và cổ điển từ Nike, Adidas, Jordan, New Balance và nhiều thương hiệu hàng đầu. Hỗ trợ giao hàng nhanh, đổi trả dễ dàng và hướng dẫn chọn size chi tiết.',
   openGraph: {
     type: 'website',
     locale: 'vi_VN',
@@ -62,12 +69,27 @@ export default function ShopPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Breadcrumb */}
+        <div className="py-6">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">Trang Chủ</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/shop">Cửa Hàng</BreadcrumbLink>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">Xem Tất Cả Sản Phẩm</h1>
           <p className="text-muted-foreground text-lg">
             Duyệt bộ sưu tập hoàn chỉnh các sneaker chất lượng cao và giày thể thao của chúng tôi
           </p>
+          {/* brief tagline retained; full description moved to sidebar */}
         </div>
 
         <ShopContent />

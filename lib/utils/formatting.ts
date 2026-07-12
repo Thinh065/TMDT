@@ -24,3 +24,10 @@ export const slugify = (text: string): string => {
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-');
 };
+
+export const productSlug = (text: string): string => {
+  return text
+    .normalize('NFKD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/[^A-Za-z0-9]/g, '');
+};

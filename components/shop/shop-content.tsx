@@ -97,9 +97,23 @@ export default function ShopContent() {
               </button>
             )}
 
+            {/* Collection intro moved here for layout */}
+            <div className="mb-4 text-sm text-muted-foreground">
+              <h3 className="font-semibold text-foreground mb-2">Giới thiệu bộ sưu tập</h3>
+              <p>
+                SOLE cung cấp các mẫu giày dành cho chạy bộ, bóng rổ, thời trang và tập luyện từ các
+                thương hiệu nổi tiếng. Mỗi sản phẩm có mô tả chi tiết, thông số chất liệu và bảng size
+                để bạn chọn đôi giày phù hợp. Hỗ trợ giao hàng nhanh và chính sách đổi trả thuận tiện.
+              </p>
+              <p className="mt-2">
+                Tìm kiếm theo thương hiệu, lọc theo khoảng giá và chọn kích cỡ mong muốn. Nếu cần tư vấn
+                size, hãy xem hướng dẫn chọn size trên trang sản phẩm hoặc liên hệ bộ phận hỗ trợ của SOLE.
+              </p>
+            </div>
+
             {/* Category Filter */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4">Danh Mục</h3>
+              <h2 className="font-semibold text-foreground mb-4 text-lg">Danh Mục</h2>
               <div className="space-y-2">
                 {categories.map((cat) => (
                   <button
@@ -119,7 +133,7 @@ export default function ShopContent() {
 
             {/* Brand Filter */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4">Thương Hiệu</h3>
+              <h2 className="font-semibold text-foreground mb-4 text-lg">Thương Hiệu</h2>
               <div className="space-y-2">
                 {brands.map((brand) => (
                   <label key={brand} className="flex items-center gap-3 cursor-pointer group">
@@ -139,7 +153,7 @@ export default function ShopContent() {
 
             {/* Price Filter */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4">Khoảng Giá</h3>
+              <h2 className="font-semibold text-foreground mb-4 text-lg">Khoảng Giá</h2>
               <div className="space-y-4">
                 <div>
                   <label className="text-sm text-muted-foreground">
@@ -178,9 +192,10 @@ export default function ShopContent() {
         <div className="lg:col-span-3">
           {/* Sort and Filter Button */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-            <p className="text-muted-foreground">
-              Showing <span className="font-semibold text-foreground">{filteredProducts.length}</span> products
-            </p>
+            <div>
+              <p className="text-muted-foreground">Showing <span className="font-semibold text-foreground">{filteredProducts.length}</span> products</p>
+              <h2 className="mt-2 text-lg font-semibold text-foreground">Sản Phẩm</h2>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Button

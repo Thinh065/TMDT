@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
 import { mockProducts } from '@/lib/data/products';
-import { formatPrice } from '@/lib/utils/formatting';
+import { formatPrice, productSlug } from '@/lib/utils/formatting';
 
 interface LayoutProps {
   children: React.ReactNode;
   params: {
-    id: string;
+    slug: string;
   };
 }
 
 export async function generateMetadata({ params }: { params: LayoutProps['params'] }): Promise<Metadata> {
-  const product = mockProducts.find((p) => p.id === params.id);
+  const { slug } = await params as { slug: string };
+  const product = mockProducts.find((p) => productSlug(p.name) === slug);
 
   if (!product) {
     return {
@@ -25,9 +26,9 @@ export async function generateMetadata({ params }: { params: LayoutProps['params
     title: `${product.name} - SOLE`,
     description: product.description,
     openGraph: {
-      type: 'product',
+      type: 'website',
       locale: 'vi_VN',
-      url: `https://tmdt-9evc.vercel.app/shop/${product.id}`,
+      url: `https://tmdt-9evc.vercel.app/shop/${productSlug(product.name)}`,
       siteName: 'SOLE Shop',
       title: product.name,
       description: product.description,

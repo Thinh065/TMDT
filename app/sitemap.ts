@@ -54,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const productPages: MetadataRoute.Sitemap = mockProducts
     .filter((product) => product.featured)
     .map((product) => ({
-      url: `${baseUrl}/shop/${product.id}`,
+      url: `${baseUrl}/shop/${productSlug(product.name)}`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.8,

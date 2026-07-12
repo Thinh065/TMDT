@@ -7,7 +7,7 @@ import { Heart } from 'lucide-react';
 import { useFavorites } from '@/lib/context/favorites-context';
 import { useCart } from '@/lib/context/cart-context';
 import { useState } from 'react';
-import { formatPrice } from '@/lib/utils/formatting';
+import { formatPrice, productSlug } from '@/lib/utils/formatting';
 
 interface ProductCardProps {
   product: Product;
@@ -38,7 +38,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group relative bg-card rounded-lg border border-border overflow-hidden hover:border-accent transition-all hover:shadow-lg">
       {/* Image Container */}
-      <Link href={`/shop/${product.id}`} className="relative block overflow-hidden bg-secondary aspect-square">
+      <Link href={`/shop/${productSlug(product.name)}`} className="relative block overflow-hidden bg-secondary aspect-square">
         <img
           src={product.image}
           alt={product.name}
@@ -64,7 +64,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Product Info */}
       <div className="p-4 space-y-3">
         <div>
-          <Link href={`/shop/${product.id}`} className="hover:text-accent transition-colors">
+          <Link href={`/shop/${productSlug(product.name)}`} className="hover:text-accent transition-colors">
             <p className="text-xs text-muted-foreground uppercase tracking-wide font-semibold">{product.brand}</p>
             <h3 className="text-sm font-semibold text-foreground line-clamp-2 group-hover:text-accent transition-colors">
               {product.name}
@@ -128,7 +128,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </Button>
 
         {/* View Details Link */}
-        <Link href={`/shop/${product.id}`} className="block w-full text-center py-2 text-xs text-accent hover:underline">
+        <Link href={`/shop/${productSlug(product.name)}`} className="block w-full text-center py-2 text-xs text-accent hover:underline">
           Xem Chi Tiết
         </Link>
       </div>

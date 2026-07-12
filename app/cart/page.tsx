@@ -7,7 +7,7 @@ import { useAuth } from '@/lib/context/auth-context';
 import { mockProducts } from '@/lib/data/products';
 import { Button } from '@/components/ui/button';
 import { Trash2, ArrowLeft } from 'lucide-react';
-import { formatPrice } from '@/lib/utils/formatting';
+import { formatPrice, productSlug } from '@/lib/utils/formatting';
 
 export default function CartPage() {
   const router = useRouter();
@@ -71,7 +71,7 @@ export default function CartPage() {
                 <div key={`${item.productId}-${item.selectedSize}-${item.selectedColor}`} className="border border-border rounded-lg p-6 bg-card">
                   <div className="flex flex-col sm:flex-row gap-6">
                     {/* Product Image */}
-                    <Link href={`/shop/${product.id}`} className="w-24 h-24 flex-shrink-0">
+                    <Link href={`/shop/${productSlug(product.name)}`} className="w-24 h-24 flex-shrink-0">
                       <img
                         src={product.image}
                         alt={product.name}
@@ -81,7 +81,7 @@ export default function CartPage() {
 
                     {/* Product Info */}
                     <div className="flex-1 min-w-0">
-                      <Link href={`/shop/${product.id}`} className="hover:text-accent transition-colors">
+                      <Link href={`/shop/${productSlug(product.name)}`} className="hover:text-accent transition-colors">
                         <h3 className="text-lg font-semibold text-foreground mb-2">{product.name}</h3>
                       </Link>
                       <p className="text-sm text-muted-foreground mb-2">
