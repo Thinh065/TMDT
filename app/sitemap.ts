@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { mockBlogPosts } from '@/lib/data/blog-posts'
 import { mockProducts } from '@/lib/data/products'
+import { productSlug } from '@/lib/utils/formatting'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://tmdt-9evc.vercel.app'
