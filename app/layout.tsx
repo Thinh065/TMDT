@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   title: 'SOLE - Cửa Hàng Giày Cao Cấp',
   description: 'Khám phá những đôi giày sneaker và giày thể thao mới nhất từ các thương hiệu hàng đầu. Mua sắm dễ dàng với nhiều mẫu mã thời trang, chất lượng cao, giá tốt và giao hàng nhanh trên toàn quốc.',
-  generator: 'v0.app',
+  generator: 'SOLE',
   openGraph: {
     type: 'website',
     locale: 'vi_VN',
@@ -45,21 +45,8 @@ export const metadata: Metadata = {
     creator: '@sole_store',
   },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.png',
+    apple: '/favicon.png',
   },
 }
 
@@ -98,6 +85,7 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
         />
+        <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cmrmy7tbd06boqk1okbomu05y"></script>
       </head>
       <body className="font-sans antialiased bg-background text-foreground">
         <AuthProvider>
