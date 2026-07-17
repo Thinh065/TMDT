@@ -2,48 +2,69 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Product } from '../types/product';
-import { mockProducts as initialProducts } from '../data/products';
-import { getStorageItem, setStorageItem } from '../utils/storage';
 
 interface AdminContextType {
   products: Product[];
-  addProduct: (product: Omit<Product, 'id'>) => void;
-  updateProduct: (id: string, product: Partial<Product>) => void;
-  deleteProduct: (id: string) => void;
+  addProduct: (product: Omit<Product, 'id'>) => Promise<void>;
+  updateProduct: (id: string, product: Partial<Product>) => Promise<void>;
+  deleteProduct: (id: string) => Promise<void>;
   getProductById: (id: string) => Product | undefined;
 }
 
 const AdminContext = createContext<AdminContextType | undefined>(undefined);
 
 export function AdminProvider({ children }: { children: React.ReactNode }) {
-  const [products, setProducts] = useState<Product[]>(initialProducts);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    // Try to load products from localStorage, fallback to initial products
-    const saved = getStorageItem<Product[]>('admin_products', initialProducts);
-    setProducts(saved);
+    const loadProducts = async () => {
+      try {
+        const response = await fetch('/api/products', { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error('Failed to load products');
+        }
+        const data = (await response.json()) as Product[];
+        setProducts(data);
+      } catch (error) {
+        console.error('Error loading products from API:', error);
+      }
+    };
+
+    loadProducts();
   }, []);
 
-  const addProduct = (productData: Omit<Product, 'id'>) => {
-    const newProduct: Product = {
-      ...productData,
-      id: `product-${Date.now()}`,
-    };
-    const updated = [...products, newProduct];
-    setProducts(updated);
-    setStorageItem('admin_products', updated);
+  const addProduct = async (productData: Omit<Product, 'id'>) => {
+    const response = await fetch('/api/products', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(productData),
+    });
+    if (!response.ok) {
+      throw new Error('Failed to create product');
+    }
+    const created = (await response.json()) as Product;
+    setProducts((prev) => [...prev, created]);
   };
 
-  const updateProduct = (id: string, updates: Partial<Product>) => {
-    const updated = products.map((p) => (p.id === id ? { ...p, ...updates } : p));
-    setProducts(updated);
-    setStorageItem('admin_products', updated);
+  const updateProduct = async (id: string, updates: Partial<Product>) => {
+    const response = await fetch(`/api/products/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updates),
+    });
+    if (!response.ok) {
+      throw new Error('Failed to update product');
+    }
+    const updated = (await response.json()) as Product;
+    setProducts((prev) => prev.map((product) => (product.id === id ? updated : product)));
   };
 
-  const deleteProduct = (id: string) => {
-    const updated = products.filter((p) => p.id !== id);
-    setProducts(updated);
-    setStorageItem('admin_products', updated);
+  const deleteProduct = async (id: string) => {
+    const response = await fetch(`/api/products/${id}`, { method: 'DELETE' });
+    if (!response.ok) {
+      throw new Error('Failed to delete product');
+    }
+    setProducts((prev) => prev.filter((p) => p.id !== id));
   };
 
   const getProductById = (id: string) => {

@@ -1,13 +1,15 @@
 import Link from 'next/link';
+import Script from 'next/script';
 import { Button } from '@/components/ui/button';
-import { mockProducts } from '@/lib/data/products';
 import ProductCard from '@/components/shop/product-card';
 import { mockBlogPosts } from '@/lib/data/blog-posts';
 import { formatDate } from '@/lib/utils/formatting';
 import { ArrowRight } from 'lucide-react';
+import { getProducts } from '@/lib/product-service';
 
-export default function Home() {
-  const featuredProducts = mockProducts.filter((p) => p.featured).slice(0, 4);
+export default async function Home() {
+  const allProducts = await getProducts();
+  const featuredProducts = allProducts.filter((p) => p.featured).slice(0, 4);
   const featuredBlogPosts = mockBlogPosts.slice(0, 4);
 
   const organizationSchema = {
@@ -48,12 +50,16 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      <script
+      <Script
+        id="organization-schema"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <script
+      <Script
+        id="website-schema"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       {/* Hero Section */}

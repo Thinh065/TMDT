@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import type { Metadata } from 'next';
 import ShopContent from '@/components/shop/shop-content';
 import {
@@ -6,7 +7,8 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
 } from '@/components/ui/breadcrumb';
-import { mockProducts } from '@/lib/data/products';
+import { getProducts } from '@/lib/product-service';
+import type { Product } from '@/lib/types/product';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,7 +40,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ShopPage() {
+interface ShopPageProps {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+export default async function ShopPage({ searchParams }: ShopPageProps) {
+  const products = await getProducts();
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -46,7 +53,7 @@ export default function ShopPage() {
     description: 'Duyệt bộ sưu tập hoàn chỉnh các sneaker chất lượng cao và giày thể thao',
     mainEntity: {
       '@type': 'ItemList',
-      itemListElement: mockProducts.slice(0, 12).map((product, index) => ({
+      itemListElement: products.slice(0, 12).map((product, index) => ({
         '@type': 'Product',
         position: index + 1,
         name: product.name,
@@ -64,8 +71,10 @@ export default function ShopPage() {
 
   return (
     <div className="min-h-screen bg-background py-12">
-      <script
+      <Script
+        id="shop-collection-schema"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,7 +101,7 @@ export default function ShopPage() {
           {/* brief tagline retained; full description moved to sidebar */}
         </div>
 
-        <ShopContent />
+        <ShopContent products={products} />
       </div>
     </div>
   );

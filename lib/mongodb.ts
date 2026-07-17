@@ -1,0 +1,52 @@
+import { MongoClient, type MongoClientOptions } from 'mongodb';
+
+const uri = process.env.MONGODB_URI;
+const dbName = process.env.MONGODB_DB || 'sole_store';
+const mongoOptions: MongoClientOptions = {
+  serverSelectionTimeoutMS: 3000,
+  connectTimeoutMS: 3000,
+  socketTimeoutMS: 3000,
+};
+
+let cachedClient: MongoClient | null = null;
+let cachedPromise: Promise<MongoClient> | null = null;
+
+declare global {
+  // eslint-disable-next-line no-var
+  var _mongoClientPromise: Promise<MongoClient> | undefined;
+}
+
+function createMongoClient() {
+  if (!uri) {
+    throw new Error('MONGODB_URI is not defined in environment variables.');
+  }
+
+  return new MongoClient(uri, mongoOptions);
+}
+
+export async function getMongoClient() {
+  if (!uri) {
+    throw new Error('MONGODB_URI is not defined in environment variables.');
+  }
+
+  if (!cachedPromise) {
+    const client = createMongoClient();
+    cachedClient = client;
+
+    if (process.env.NODE_ENV === 'development') {
+      if (!global._mongoClientPromise) {
+        global._mongoClientPromise = client.connect();
+      }
+      cachedPromise = global._mongoClientPromise;
+    } else {
+      cachedPromise = client.connect();
+    }
+  }
+
+  return cachedPromise;
+}
+
+export async function getDatabase() {
+  const client = await getMongoClient();
+  return client.db(dbName);
+}

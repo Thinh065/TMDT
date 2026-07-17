@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import { AuthProvider } from '@/lib/context/auth-context'
 import { CartProvider } from '@/lib/context/cart-context'
 import { FavoritesProvider } from '@/lib/context/favorites-context'
@@ -85,7 +84,12 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
         />
-        <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cmrmy7tbd06boqk1okbomu05y"></script>
+        <Script
+          id="fastbots-embed"
+          strategy="afterInteractive"
+          src="https://app.fastbots.ai/embed.js"
+          data-bot-id="cmrmy7tbd06boqk1okbomu05y"
+        />
         <Script
           id="fastbots-resize"
           strategy="afterInteractive"
@@ -137,7 +141,6 @@ export default function RootLayout({
                   </main>
                   <Footer />
                 </div>
-                {process.env.NODE_ENV === 'production' && <Analytics />}
               </AdminProvider>
             </FavoritesProvider>
           </CartProvider>

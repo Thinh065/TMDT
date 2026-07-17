@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Script from 'next/script';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -8,10 +9,10 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import type { Metadata } from 'next';
-import { mockProducts } from '@/lib/data/products';
 import ProductCard from '@/components/shop/product-card';
 import ProductDetailClient from '@/components/shop/product-detail';
 import { productSlug } from '@/lib/utils/formatting';
+import { getProductBySlug, getProducts } from '@/lib/product-service';
 
 interface ProductDetailPageProps {
   params: {
@@ -21,7 +22,7 @@ interface ProductDetailPageProps {
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
   const { slug } = await params as { slug: string };
-  const product = mockProducts.find((p) => productSlug(p.name) === slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     return (
@@ -53,11 +54,17 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     },
   };
 
-  const relatedProducts = mockProducts.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
+  const allProducts = await getProducts();
+  const relatedProducts = allProducts.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
 
   return (
     <div className="min-h-screen bg-background">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <Script
+        id={`product-schema-${slug}`}
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <Breadcrumb>

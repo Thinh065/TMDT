@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Script from 'next/script';
 import { use } from 'react';
 import type { Metadata } from 'next';
 import { mockBlogPosts } from '@/lib/data/blog-posts';
@@ -99,8 +100,10 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
 
   return (
     <article className="min-h-screen bg-background">
-      <script
+      <Script
+        id={`blog-post-schema-${slug}`}
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       {/* Header */}

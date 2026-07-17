@@ -2,12 +2,16 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { mockProducts } from '@/lib/data/products';
+import type { Product } from '@/lib/types/product';
 import ProductCard from '@/components/shop/product-card';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 
-export default function ShopContent() {
+interface ShopContentProps {
+  products: Product[];
+}
+
+export default function ShopContent({ products }: ShopContentProps) {
   const searchParams = useSearchParams();
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('');
@@ -22,11 +26,11 @@ export default function ShopContent() {
   }, [searchParams]);
 
   // Get unique brands
-  const brands = Array.from(new Set(mockProducts.map((p) => p.brand))).sort();
+  const brands = Array.from(new Set(products.map((p) => p.brand))).sort();
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {
-    let filtered = mockProducts.filter((product) => {
+    let filtered = products.filter((product) => {
       const matchesSearch = product.name.toLowerCase().includes(search.toLowerCase()) ||
         product.brand.toLowerCase().includes(search.toLowerCase());
       const matchesCategory = !selectedCategory || product.category === selectedCategory;
