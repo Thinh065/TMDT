@@ -14,7 +14,7 @@ export default function ProductsPage() {
   const { products, deleteProduct } = useAdmin();
 
   useEffect(() => {
-    if (!user) {
+    if (!user || user.role !== 'admin') {
       router.push('/auth/login');
     }
   }, [user, router]);

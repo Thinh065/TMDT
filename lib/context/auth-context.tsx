@@ -26,16 +26,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(false);
   }, []);
 
+  const adminAccount = {
+    email: 'trannhatthinh2004',
+    password: 'TNKzero9',
+    name: 'Tran Thinh',
+  };
+
   const login = async (email: string, password: string) => {
     if (!email || !password) {
-      throw new Error('Email and password are required');
+      throw new Error('Email và mật khẩu là bắt buộc');
     }
 
-    // Demo: create user object
+    const isAdmin = email === adminAccount.email && password === adminAccount.password;
     const newUser: User = {
-      id: `user-${Date.now()}`,
+      id: isAdmin ? 'admin-1' : `user-${Date.now()}`,
       email,
-      name: email.split('@')[0],
+      name: isAdmin ? adminAccount.name : email.split('@')[0],
+      role: isAdmin ? 'admin' : 'user',
       createdAt: new Date().toISOString(),
     };
 
@@ -48,11 +55,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       throw new Error('All fields are required');
     }
 
-    // Demo: create user object
     const newUser: User = {
       id: `user-${Date.now()}`,
       email,
       name,
+      role: 'user',
       createdAt: new Date().toISOString(),
     };
 

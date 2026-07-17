@@ -65,6 +65,11 @@ export default function Navbar() {
 
             {user ? (
               <>
+                {user.role === 'admin' && (
+                  <Link href="/admin" className="text-accent hover:text-white transition-colors font-semibold">
+                    Admin
+                  </Link>
+                )}
                 <Link href="/account" className="text-foreground hover:text-accent transition-colors">
                   {user.name}
                 </Link>
@@ -135,6 +140,15 @@ export default function Navbar() {
 
             {user ? (
               <>
+                {user.role === 'admin' && (
+                  <Link
+                    href="/admin"
+                    className="block text-accent hover:text-white transition-colors font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Admin
+                  </Link>
+                )}
                 <Link
                   href="/account"
                   className="block text-foreground hover:text-accent transition-colors font-medium py-2"

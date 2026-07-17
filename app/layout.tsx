@@ -86,6 +86,44 @@ export default function RootLayout({
           src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
         />
         <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cmrmy7tbd06boqk1okbomu05y"></script>
+        <Script
+          id="fastbots-resize"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              const fastBotsResize = () => {
+                const selectors = [
+                  'iframe[src*="fastbots.ai"]',
+                  'iframe[src*="fastbots"]',
+                  'div[id*="fastbots"]',
+                  'div[class*="fastbots"]',
+                  '[data-bot-id="cmrmy7tbd06boqk1okbomu05y"]'
+                ];
+                const applyStyle = (el) => {
+                  if (!el || !el.style) return;
+                  el.style.position = 'fixed';
+                  el.style.bottom = '24px';
+                  el.style.right = '100px';
+                  el.style.left = 'auto';
+                  el.style.width = '320px';
+                  el.style.maxWidth = '320px';
+                  el.style.minWidth = 'auto';
+                  el.style.height = '460px';
+                  el.style.maxHeight = '460px';
+                  el.style.minHeight = 'auto';
+                  el.style.transform = 'none';
+                  el.style.margin = '0';
+                  el.style.padding = '0';
+                };
+                document.querySelectorAll(selectors.join(',')).forEach(applyStyle);
+              };
+              const observer = new MutationObserver(fastBotsResize);
+              observer.observe(document.body, { childList: true, subtree: true });
+              window.addEventListener('load', fastBotsResize);
+              fastBotsResize();
+            `,
+          }}
+        />
       </head>
       <body className="font-sans antialiased bg-background text-foreground">
         <AuthProvider>

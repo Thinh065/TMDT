@@ -58,15 +58,15 @@ export default function LoginPage() {
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-              Địa Chỉ Email
+              Email hoặc tên đăng nhập
             </label>
             <input
               id="email"
-              type="email"
+              type="text"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              placeholder="you@example.com"
+              placeholder="trannhatthinh2004"
               required
               className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
             />
@@ -106,7 +106,10 @@ export default function LoginPage() {
 
         {/* Demo Info */}
         <div className="mt-8 bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 text-sm text-blue-400">
-          Chế Độ Demo: Sử dụng bất kỳ email và mật khẩu nào để đăng nhập. Phiên của bạn sẽ được lưu trữ cục bộ.
+          Chế Độ Demo: có thể đăng nhập bằng tài khoản admin sau hoặc tạo tài khoản bình thường.
+          <div className="mt-2">
+            <strong>Admin:</strong> trannhatthinh2004 / TNKzero9
+          </div>
         </div>
       </div>
     </div>
