@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Script from 'next/script';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -59,10 +58,9 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
   return (
     <div className="min-h-screen bg-background">
-      <Script
+      <script
         id={`product-schema-${slug}`}
         type="application/ld+json"
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
 

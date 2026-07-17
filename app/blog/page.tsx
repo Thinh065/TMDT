@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import { mockBlogPosts } from '@/lib/data/blog-posts';
 import { Button } from '@/components/ui/button';
@@ -61,10 +60,9 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Script
+      <script
         id="blog-collection-schema"
         type="application/ld+json"
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       {/* Hero Section */}

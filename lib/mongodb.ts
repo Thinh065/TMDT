@@ -7,6 +7,9 @@ const mongoOptions: MongoClientOptions = {
   serverSelectionTimeoutMS: 3000,
   connectTimeoutMS: 3000,
   socketTimeoutMS: 3000,
+  tls: true,
+  family: 4,
+  appName: process.env.MONGODB_APP_NAME ?? 'SOLE Store App',
 };
 
 let cachedClient: MongoClient | null = null;

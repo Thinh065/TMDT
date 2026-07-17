@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Script from 'next/script';
 import { Button } from '@/components/ui/button';
 import ProductCard from '@/components/shop/product-card';
 import { mockBlogPosts } from '@/lib/data/blog-posts';
@@ -50,16 +49,14 @@ export default async function Home() {
 
   return (
     <div className="w-full">
-      <Script
+      <script
         id="organization-schema"
         type="application/ld+json"
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <Script
+      <script
         id="website-schema"
         type="application/ld+json"
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       {/* Hero Section */}

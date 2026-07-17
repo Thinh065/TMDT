@@ -1,0 +1,534 @@
+[
+  {
+    "id": "1",
+    "name": "Air Max 97",
+    "brand": "Nike",
+    "price": 189.99,
+    "originalPrice": 249.99,
+    "image": "https://i.pinimg.com/1200x/d7/e5/3b/d7e53bfa185faf105ae13120cc0a7225.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/d7/e5/3b/d7e53bfa185faf105ae13120cc0a7225.jpg",
+      "https://i.pinimg.com/564x/d7/e5/3b/d7e53bfa185faf105ae13120cc0a7225.jpg"
+    ],
+    "description": "Air Max 97 là một sneaker cổ điển với công nghệ không khí hiển thị và kiểu dáng bóng mượt. Hoàn hảo để mặc hàng ngày và các hoạt động thể thao.",
+    "material": "Lưới và da tổng hợp",
+    "category": "casual",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "White",
+      "Black",
+      "Silver"
+    ],
+    "rating": 4.5,
+    "reviewCount": 328,
+    "inStock": true,
+    "stockCount": 45,
+    "featured": true
+  },
+  {
+    "id": "2",
+    "name": "Ultraboost 23",
+    "brand": "Adidas",
+    "price": 199.99,
+    "image": "https://i.pinimg.com/736x/3a/47/63/3a47639ef7ba0afb415b2a5d49c1e575.jpg",
+    "images": [
+      "https://i.pinimg.com/736x/3a/47/63/3a47639ef7ba0afb415b2a5d49c1e575.jpg"
+    ],
+    "description": "Adidas Ultraboost với công nghệ đệm Boost cung cấp sự thoải mái vượt trội để chạy bộ và mặc hàng ngày.",
+    "material": "Primeknit và Boost",
+    "category": "running",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "Black",
+      "White",
+      "Blue"
+    ],
+    "rating": 4.7,
+    "reviewCount": 542,
+    "inStock": true,
+    "stockCount": 32,
+    "featured": true
+  },
+  {
+    "id": "3",
+    "name": "Jordan 1 Low",
+    "brand": "Jordan",
+    "price": 139.99,
+    "image": "https://i.pinimg.com/1200x/e5/dc/0c/e5dc0c1a389b9d45bf7e83061f1e61b9.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/e5/dc/0c/e5dc0c1a389b9d45bf7e83061f1e61b9.jpg"
+    ],
+    "description": "Jordan 1 Low biểu tượng với kiểu dáng cổ điển và xây dựng da cao cấp.",
+    "material": "Da",
+    "category": "basketball",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "Black/Red",
+      "White",
+      "Chicago"
+    ],
+    "rating": 4.6,
+    "reviewCount": 612,
+    "inStock": true,
+    "stockCount": 28,
+    "featured": true
+  },
+  {
+    "id": "4",
+    "name": "New Balance 990v6",
+    "brand": "New Balance",
+    "price": 219.99,
+    "image": "https://i.pinimg.com/1200x/de/90/25/de90253a38184fdcc73fe3827b7ec76e.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/de/90/25/de90253a38184fdcc73fe3827b7ec76e.jpg"
+    ],
+    "description": "Một sneaker thời trang cao cấp với phong cách di sản và công nghệ thoải mái hiện đại.",
+    "material": "Lông lót và lưới",
+    "category": "lifestyle",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "Grey",
+      "Navy",
+      "White"
+    ],
+    "rating": 4.4,
+    "reviewCount": 245,
+    "inStock": true,
+    "stockCount": 35
+  },
+  {
+    "id": "5",
+    "name": "Puma RS-X",
+    "brand": "Puma",
+    "price": 99.99,
+    "image": "https://i.pinimg.com/1200x/25/1a/96/251a96dbf206908cd692da30e4a78b05.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/25/1a/96/251a96dbf206908cd692da30e4a78b05.jpg"
+    ],
+    "description": "Puma RS-X lấy cảm hứng từ kiểu cũ với thiết kế táo bạo và đệm đáp ứng.",
+    "material": "Nhân tạo và lưới",
+    "category": "casual",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "Black",
+      "Red",
+      "White"
+    ],
+    "rating": 4.3,
+    "reviewCount": 189,
+    "inStock": true,
+    "stockCount": 52
+  },
+  {
+    "id": "6",
+    "name": "Vaporfly Next%",
+    "brand": "Nike",
+    "price": 249.99,
+    "originalPrice": 279.99,
+    "image": "https://i.pinimg.com/1200x/02/2b/70/022b70b3ce1a0c102d769531cbf7c3d3.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/02/2b/70/022b70b3ce1a0c102d769531cbf7c3d3.jpg"
+    ],
+    "description": "Giày chạy được thiết kế cho vận động viên hàng đầu với công nghệ Zoom mới nhất của Nike.",
+    "material": "Vải thun và nhân tạo",
+    "category": "running",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "White/Black",
+      "Pink",
+      "Blue"
+    ],
+    "rating": 4.8,
+    "reviewCount": 456,
+    "inStock": true,
+    "stockCount": 18,
+    "featured": true
+  },
+  {
+    "id": "7",
+    "name": "Superstar",
+    "brand": "Adidas",
+    "price": 129.99,
+    "image": "https://i.pinimg.com/1200x/b3/5a/7b/b35a7b3f1a11b8977054a4f2be62a544.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/b3/5a/7b/b35a7b3f1a11b8977054a4f2be62a544.jpg"
+    ],
+    "description": "Adidas Superstar vĩnh hằng với gót tua và ba sọc cổ điển biểu tượng của nó.",
+    "material": "Da",
+    "category": "lifestyle",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "White/Black",
+      "All White",
+      "Gold"
+    ],
+    "rating": 4.5,
+    "reviewCount": 789,
+    "inStock": true,
+    "stockCount": 61
+  },
+  {
+    "id": "8",
+    "name": "Gel-Lyte III",
+    "brand": "Asics",
+    "price": 159.99,
+    "image": "https://i.pinimg.com/736x/40/14/2a/40142a7edabc4e9661644447d2f6f7e1.jpg",
+    "images": [
+      "https://i.pinimg.com/736x/40/14/2a/40142a7edabc4e9661644447d2f6f7e1.jpg"
+    ],
+    "description": "Giày chạy kiểu cũ với công nghệ đệm Gel của Asics để thoải mái.",
+    "material": "Lưới và lông lót",
+    "category": "running",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "Black/Grey",
+      "White/Navy",
+      "Purple"
+    ],
+    "rating": 4.4,
+    "reviewCount": 324,
+    "inStock": true,
+    "stockCount": 29
+  },
+  {
+    "id": "9",
+    "name": "Blazer Mid",
+    "brand": "Nike",
+    "price": 119.99,
+    "image": "https://i.pinimg.com/1200x/a0/a3/07/a0a30767a2a6533ede5d4f27b6343527.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/a0/a3/07/a0a30767a2a6533ede5d4f27b6343527.jpg"
+    ],
+    "description": "Nike Blazer Mid cổ điển với thiết kế lấy cảm hứng từ thời xưa và sức hấp dẫn vĩnh hằng.",
+    "material": "Da và vải Canvas",
+    "category": "lifestyle",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "White",
+      "Black",
+      "Royal Blue"
+    ],
+    "rating": 4.6,
+    "reviewCount": 543,
+    "inStock": true,
+    "stockCount": 37
+  },
+  {
+    "id": "10",
+    "name": "Stan Smith",
+    "brand": "Adidas",
+    "price": 109.99,
+    "image": "https://i.pinimg.com/1200x/ed/d0/17/edd017f090cd69eba9bff68d23330ad1.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/ed/d0/17/edd017f090cd69eba9bff68d23330ad1.jpg"
+    ],
+    "description": "Giày quần vợt tối giản biểu tượng với những đường sạch sẽ và thanh lịch vĩnh hằng.",
+    "material": "Da",
+    "category": "casual",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "White/Green",
+      "All White",
+      "Black"
+    ],
+    "rating": 4.7,
+    "reviewCount": 891,
+    "inStock": true,
+    "stockCount": 74
+  },
+  {
+    "id": "11",
+    "name": "LeBron 21",
+    "brand": "Nike",
+    "price": 279.99,
+    "image": "https://i.pinimg.com/1200x/ab/ea/30/abea30ecab829520025436e3c2a080b1.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/ab/ea/30/abea30ecab829520025436e3c2a080b1.jpg"
+    ],
+    "description": "Giày bóng rổ cao cấp với đệm nâng cao và hỗ trợ cổ chân.",
+    "material": "Da và lưới",
+    "category": "basketball",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "Black/Gold",
+      "White/Red",
+      "Purple"
+    ],
+    "rating": 4.7,
+    "reviewCount": 412,
+    "inStock": true,
+    "stockCount": 22
+  },
+  {
+    "id": "12",
+    "name": "Alphabounce",
+    "brand": "Adidas",
+    "price": 149.99,
+    "image": "https://i.pinimg.com/736x/65/89/44/65894440825a73d1e3ebcd57f707843b.jpg",
+    "images": [
+      "https://i.pinimg.com/736x/65/89/44/65894440825a73d1e3ebcd57f707843b.jpg"
+    ],
+    "description": "Giày chạy hiện đại với đệm Bounce để hiệu suất đáp ứng.",
+    "material": "Primeknit và Bounce",
+    "category": "training",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "Black",
+      "White",
+      "Orange"
+    ],
+    "rating": 4.4,
+    "reviewCount": 278,
+    "inStock": true,
+    "stockCount": 41
+  },
+  {
+    "id": "13",
+    "name": "React Infinity Run",
+    "brand": "Nike",
+    "price": 179.99,
+    "image": "https://i.pinimg.com/1200x/e8/64/df/e864df2ae88045821df3d52671eb7628.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/e8/64/df/e864df2ae88045821df3d52671eb7628.jpg"
+    ],
+    "description": "Running shoe with Nike React foam for responsive cushioning and comfort.",
+    "material": "Mesh and synthetic",
+    "category": "running",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "White",
+      "Black",
+      "Grey"
+    ],
+    "rating": 4.5,
+    "reviewCount": 367,
+    "inStock": true,
+    "stockCount": 38
+  },
+  {
+    "id": "14",
+    "name": "ZX 500",
+    "brand": "Adidas",
+    "price": 119.99,
+    "image": "https://i.pinimg.com/1200x/5e/19/d4/5e19d497313f0eabd678a5a0bbce7d9b.jpg",
+    "images": [
+      "https://i.pinimg.com/1200x/5e/19/d4/5e19d497313f0eabd678a5a0bbce7d9b.jpg"
+    ],
+    "description": "Retro-inspired training shoe with classic Adidas styling and modern comfort.",
+    "material": "Suede and mesh",
+    "category": "training",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "Black/White",
+      "Navy",
+      "Green"
+    ],
+    "rating": 4.3,
+    "reviewCount": 201,
+    "inStock": true,
+    "stockCount": 45
+  },
+  {
+    "id": "15",
+    "name": "Cortez",
+    "brand": "Nike",
+    "price": 129.99,
+    "image": "https://i.pinimg.com/736x/a8/5f/9a/a85f9a23ddadc858f1a3ebdb0f543a07.jpg",
+    "images": [
+      "https://i.pinimg.com/736x/a8/5f/9a/a85f9a23ddadc858f1a3ebdb0f543a07.jpg"
+    ],
+    "description": "Iconic retro runner with classic swoosh design and soft leather construction.",
+    "material": "Leather",
+    "category": "casual",
+    "sizes": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "colors": [
+      "White/Red",
+      "Black/White",
+      "Grey"
+    ],
+    "rating": 4.6,
+    "reviewCount": 567,
+    "inStock": true,
+    "stockCount": 33
+  }
+]
