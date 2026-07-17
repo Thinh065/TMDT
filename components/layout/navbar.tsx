@@ -23,6 +23,8 @@ export default function Navbar() {
   const navLinks = [
     { href: '/', label: 'Trang Chủ' },
     { href: '/shop', label: 'Cửa Hàng' },
+    { href: '/about', label: 'Giới Thiệu' },
+    { href: '/contact', label: 'Liên Hệ' },
     { href: '/blog', label: 'Blog' },
   ];
 
