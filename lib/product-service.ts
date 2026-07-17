@@ -18,6 +18,10 @@ async function seedProductsIfNeeded(collection: Awaited<ReturnType<typeof getDat
 }
 
 async function getProductCollection() {
+  if (process.env.USE_MOCK_DATA === 'true') {
+    return null;
+  }
+
   try {
     const db = await getDatabase();
     return db.collection(COLLECTION_NAME);

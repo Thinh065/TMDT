@@ -2,6 +2,7 @@ import { MongoClient, type MongoClientOptions } from 'mongodb';
 
 const uri = process.env.MONGODB_URI;
 const dbName = process.env.MONGODB_DB || 'sole_store';
+const useMockData = process.env.USE_MOCK_DATA === 'true';
 const mongoOptions: MongoClientOptions = {
   serverSelectionTimeoutMS: 3000,
   connectTimeoutMS: 3000,
@@ -25,6 +26,10 @@ function createMongoClient() {
 }
 
 export async function getMongoClient() {
+  if (useMockData) {
+    throw new Error('MongoDB is disabled because USE_MOCK_DATA=true.');
+  }
+
   if (!uri) {
     throw new Error('MONGODB_URI is not defined in environment variables.');
   }
