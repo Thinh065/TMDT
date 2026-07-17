@@ -25,6 +25,10 @@ async function getProductCollection() {
   }
 
   const db = await getDatabase();
+  if (!db) {
+    return null;
+  }
+
   return db.collection(COLLECTION_NAME);
 }
 

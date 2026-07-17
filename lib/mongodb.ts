@@ -13,7 +13,7 @@ const mongoOptions: MongoClientOptions = {
 };
 
 let cachedClient: MongoClient | null = null;
-let cachedPromise: Promise<MongoClient> | null = null;
+let cachedPromise: Promise<MongoClient | null> | null = null;
 
 declare global {
   // eslint-disable-next-line no-var
@@ -28,16 +28,16 @@ function createMongoClient() {
   return new MongoClient(uri, mongoOptions);
 }
 
-export async function getMongoClient() {
-  if (useMockData) {
-    throw new Error('MongoDB is disabled because USE_MOCK_DATA=true.');
+export async function getMongoClient(): Promise<MongoClient | null> {
+  if (useMockData || !uri) {
+    return null;
   }
 
-  if (!uri) {
-    throw new Error('MONGODB_URI is not defined in environment variables.');
+  if (cachedPromise) {
+    return cachedPromise;
   }
 
-  if (!cachedPromise) {
+  try {
     const client = createMongoClient();
     cachedClient = client;
 
@@ -49,12 +49,24 @@ export async function getMongoClient() {
     } else {
       cachedPromise = client.connect();
     }
-  }
 
-  return cachedPromise;
+    return await cachedPromise;
+  } catch (error) {
+    console.warn('MongoDB unavailable, falling back to mock data:', error);
+    cachedPromise = null;
+    cachedClient = null;
+    if (process.env.NODE_ENV === 'development') {
+      global._mongoClientPromise = undefined;
+    }
+    return null;
+  }
 }
 
 export async function getDatabase() {
   const client = await getMongoClient();
+  if (!client) {
+    return null;
+  }
+
   return client.db(dbName);
 }
