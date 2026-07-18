@@ -84,35 +84,34 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
         />
+        <script
+          defer
+          src="https://app.fastbots.ai/embed.js"
+          data-bot-id="cmrmy7tbd06boqk1okbomu05y"
+        ></script>
         <Script
-          id="fastbots-inject"
+          id="fastbots-style-adjust"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              (function() {
-                const script = document.createElement('script');
-                script.src = 'https://app.fastbots.ai/embed.js';
-                script.setAttribute('data-bot-id', 'cmrmy7tbd06boqk1okbomu05y');
-                script.defer = true;
-                document.head.appendChild(script);
-                
-                // Adjust widget position after FastBots loads
+              setTimeout(() => {
                 const adjustWidget = () => {
                   const iframe = document.querySelector('iframe[src*="fastbots"]');
-                  if (iframe) {
+                  if (iframe && iframe.offsetWidth === 0) {
+                    iframe.style.position = 'fixed !important';
                     iframe.style.bottom = '24px !important';
                     iframe.style.right = '24px !important';
                     iframe.style.zIndex = '9999 !important';
                     iframe.style.width = '320px !important';
                     iframe.style.height = '460px !important';
+                    iframe.style.display = 'block !important';
+                    iframe.style.visibility = 'visible !important';
                   }
                 };
-                
-                // Check immediately and every 500ms for the next 5 seconds
                 adjustWidget();
                 const interval = setInterval(adjustWidget, 500);
                 setTimeout(() => clearInterval(interval), 5000);
-              })();
+              }, 1000);
             `,
           }}
         />
