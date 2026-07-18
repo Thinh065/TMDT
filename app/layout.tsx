@@ -85,46 +85,34 @@ export default function RootLayout({
           src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
         />
         <Script
-          id="fastbots-embed"
-          strategy="afterInteractive"
-          src="https://app.fastbots.ai/embed.js"
-          data-bot-id="cmrmy7tbd06boqk1okbomu05y"
-        />
-        <Script
-          id="fastbots-resize"
+          id="fastbots-inject"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              const fastBotsResize = () => {
-                const selectors = [
-                  'iframe[src*="fastbots.ai"]',
-                  'iframe[src*="fastbots"]',
-                  'div[id*="fastbots"]',
-                  'div[class*="fastbots"]',
-                  '[data-bot-id="cmrmy7tbd06boqk1okbomu05y"]'
-                ];
-                const applyStyle = (el) => {
-                  if (!el || !el.style) return;
-                  el.style.position = 'fixed';
-                  el.style.bottom = '24px';
-                  el.style.right = '100px';
-                  el.style.left = 'auto';
-                  el.style.width = '320px';
-                  el.style.maxWidth = '320px';
-                  el.style.minWidth = 'auto';
-                  el.style.height = '460px';
-                  el.style.maxHeight = '460px';
-                  el.style.minHeight = 'auto';
-                  el.style.transform = 'none';
-                  el.style.margin = '0';
-                  el.style.padding = '0';
+              (function() {
+                const script = document.createElement('script');
+                script.src = 'https://app.fastbots.ai/embed.js';
+                script.setAttribute('data-bot-id', 'cmrmy7tbd06boqk1okbomu05y');
+                script.defer = true;
+                document.head.appendChild(script);
+                
+                // Adjust widget position after FastBots loads
+                const adjustWidget = () => {
+                  const iframe = document.querySelector('iframe[src*="fastbots"]');
+                  if (iframe) {
+                    iframe.style.bottom = '24px !important';
+                    iframe.style.right = '24px !important';
+                    iframe.style.zIndex = '9999 !important';
+                    iframe.style.width = '320px !important';
+                    iframe.style.height = '460px !important';
+                  }
                 };
-                document.querySelectorAll(selectors.join(',')).forEach(applyStyle);
-              };
-              const observer = new MutationObserver(fastBotsResize);
-              observer.observe(document.body, { childList: true, subtree: true });
-              window.addEventListener('load', fastBotsResize);
-              fastBotsResize();
+                
+                // Check immediately and every 500ms for the next 5 seconds
+                adjustWidget();
+                const interval = setInterval(adjustWidget, 500);
+                setTimeout(() => clearInterval(interval), 5000);
+              })();
             `,
           }}
         />

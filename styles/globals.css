@@ -127,10 +127,11 @@
   iframe[src*="fastbots"],
   div[class*="fastbots"],
   div[id*="fastbots"],
-  [data-bot-id="cmrmy7tbd06boqk1okbomu05y"] {
+  [data-bot-id="cmrmy7tbd06boqk1okbomu05y"],
+  .iframe-hidden {
     position: fixed !important;
     bottom: 24px !important;
-    right: 100px !important;
+    right: 24px !important;
     width: 320px !important;
     max-width: 320px !important;
     min-width: unset !important;
@@ -140,5 +141,8 @@
     transform: none !important;
     margin: 0 !important;
     padding: 0 !important;
+    z-index: 9999 !important;
+    display: block !important;
+    visibility: visible !important;
   }
 }
