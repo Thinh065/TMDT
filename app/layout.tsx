@@ -84,34 +84,47 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
         />
-        <script
-          defer
+        <Script
+          id="fastbots-embed"
+          strategy="afterInteractive"
           src="https://app.fastbots.ai/embed.js"
           data-bot-id="cmrmy7tbd06boqk1okbomu05y"
-        ></script>
+        />
         <Script
-          id="fastbots-style-adjust"
+          id="fastbots-resize"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              setTimeout(() => {
-                const adjustWidget = () => {
-                  const iframe = document.querySelector('iframe[src*="fastbots"]');
-                  if (iframe && iframe.offsetWidth === 0) {
-                    iframe.style.position = 'fixed !important';
-                    iframe.style.bottom = '24px !important';
-                    iframe.style.right = '24px !important';
-                    iframe.style.zIndex = '9999 !important';
-                    iframe.style.width = '320px !important';
-                    iframe.style.height = '460px !important';
-                    iframe.style.display = 'block !important';
-                    iframe.style.visibility = 'visible !important';
-                  }
+              const fastBotsResize = () => {
+                const selectors = [
+                  'iframe[src*="fastbots.ai"]',
+                  'iframe[src*="fastbots"]',
+                  'div[id*="fastbots"]',
+                  'div[class*="fastbots"]',
+                  '[data-bot-id="cmrmy7tbd06boqk1okbomu05y"]'
+                ];
+                const applyStyle = (el) => {
+                  if (!el || !el.style) return;
+                  el.style.position = 'fixed';
+                  el.style.bottom = '24px';
+                  el.style.right = '100px';
+                  el.style.left = 'auto';
+                  el.style.width = '320px';
+                  el.style.maxWidth = '320px';
+                  el.style.minWidth = 'auto';
+                  el.style.height = '460px';
+                  el.style.maxHeight = '460px';
+                  el.style.minHeight = 'auto';
+                  el.style.transform = 'none';
+                  el.style.margin = '0';
+                  el.style.padding = '0';
                 };
-                adjustWidget();
-                const interval = setInterval(adjustWidget, 500);
-                setTimeout(() => clearInterval(interval), 5000);
-              }, 1000);
+                document.querySelectorAll(selectors.join(',')).forEach(applyStyle);
+              };
+              const observer = new MutationObserver(fastBotsResize);
+              observer.observe(document.body, { childList: true, subtree: true });
+              window.addEventListener('load', fastBotsResize);
+              fastBotsResize();
             `,
           }}
         />
