@@ -4,6 +4,12 @@
 # Allow all user agents by default
 User-agent: *
 Allow: /
+Allow: /shop/
+Allow: /blog/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /checkout/
+Sitemap: https://tmdt-9evc.vercel.app/sitemap.xml
 
 # Disallow sensitive pages
 Disallow: /admin
@@ -16,6 +22,7 @@ Disallow: /api
 # Disallow specific file types
 Disallow: /*.json$
 Allow: /sitemap.xml
+
 # Slow down aggressive bots
 User-agent: MJ12bot
 Crawl-delay: 10
