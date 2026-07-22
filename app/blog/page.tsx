@@ -1,5 +1,13 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 import { mockBlogPosts } from '@/lib/data/blog-posts';
 import { Button } from '@/components/ui/button';
 import { formatDate } from '@/lib/utils/formatting';
@@ -60,6 +68,19 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Trang Chủ</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>{'>'}</BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbPage>Blog</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       <script
         id="blog-collection-schema"
         type="application/ld+json"

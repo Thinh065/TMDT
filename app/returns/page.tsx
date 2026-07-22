@@ -1,4 +1,12 @@
 import type { Metadata } from 'next';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Trả Lại Hàng - SOLE',
@@ -8,6 +16,19 @@ export const metadata: Metadata = {
 export default function ReturnsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="py-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Trang Chủ</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>{'>'}</BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbPage>Trả Lại Hàng</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       <section className="text-center">
         <p className="text-accent font-semibold uppercase tracking-[0.3em] mb-4">Trả Lại Hàng</p>
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Chính sách đổi trả thuận tiện</h1>

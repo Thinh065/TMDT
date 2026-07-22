@@ -1,8 +1,17 @@
-'use client';
+ 'use client';
 
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/lib/context/auth-context';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
+ 
 import { Button } from '@/components/ui/button';
 import { User, ShoppingBag, Heart, LogOut } from 'lucide-react';
 import { useEffect } from 'react';
@@ -29,6 +38,19 @@ export default function AccountPage() {
   return (
     <div className="min-h-screen bg-background py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="py-6">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">Trang Chủ</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator>{'>'}</BreadcrumbSeparator>
+              <BreadcrumbItem>
+                <BreadcrumbPage>Hồ Sơ</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
         <div className="flex flex-col md:flex-row gap-8">
           {/* Sidebar */}
           <div className="w-full md:w-64 flex-shrink-0">

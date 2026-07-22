@@ -5,6 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbLink,
+  BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { getProducts } from '@/lib/product-service';
 import type { Product } from '@/lib/types/product';
@@ -82,6 +83,7 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
               <BreadcrumbItem>
                 <BreadcrumbLink href="/">Trang Chủ</BreadcrumbLink>
               </BreadcrumbItem>
+              <BreadcrumbSeparator>{'>'}</BreadcrumbSeparator>
               <BreadcrumbItem>
                 <BreadcrumbLink href="/shop">Cửa Hàng</BreadcrumbLink>
               </BreadcrumbItem>

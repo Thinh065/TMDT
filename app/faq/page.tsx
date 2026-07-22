@@ -1,4 +1,12 @@
 import type { Metadata } from 'next';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Câu Hỏi Thường Gặp - SOLE',
@@ -36,6 +44,19 @@ const faqItems = [
 export default function FAQPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="py-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Trang Chủ</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>{'>'}</BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbPage>Câu Hỏi Thường Gặp</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       <section className="text-center">
         <p className="text-accent font-semibold uppercase tracking-[0.3em] mb-4">Câu Hỏi Thường Gặp</p>
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Những thắc mắc phổ biến được giải đáp</h1>
