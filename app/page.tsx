@@ -187,6 +187,54 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* About SOLE Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-accent font-semibold uppercase tracking-widest mb-2">Về SOLE</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Mua Giày Thông Minh Hơn Với SOLE
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              SOLE mang đến bộ sưu tập giày sneaker đa dạng với thiết kế hiện đại và hiệu suất cao. Chúng tôi chọn lựa sản phẩm theo tiêu chí chất lượng, thoải mái và độ bền, để mỗi bước đi đều tự tin và phong cách.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="space-y-6 text-muted-foreground">
+              <p>
+                Tại SOLE, mỗi đôi giày đều được xử lý kỹ lưỡng từ thiết kế đến chất liệu. Bạn sẽ tìm thấy giày chạy bộ với đệm êm, giày bóng rổ có độ đàn hồi tốt, giày lifestyle phù hợp đi học đi làm và nhiều lựa chọn đa dạng cho phong cách cá nhân.
+              </p>
+              <p>
+                Chúng tôi cam kết cung cấp trải nghiệm mua sắm trực tuyến đơn giản, hỗ trợ khách hàng 24/7 và chính sách đổi trả nhanh chóng. Tìm giày phù hợp chưa bao giờ dễ dàng hơn với SOLE.
+              </p>
+            </div>
+
+            <div className="rounded-3xl bg-card border border-border p-8 text-foreground">
+              <h3 className="text-2xl font-semibold mb-4">Tại sao nên chọn SOLE?</h3>
+              <ul className="space-y-4 text-muted-foreground">
+                <li className="flex gap-3">
+                  <span className="text-accent">•</span>
+                  Bộ sưu tập giày chất lượng từ Nike, Adidas, Jordan, Puma và nhiều thương hiệu khác.
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent">•</span>
+                  Giao hàng nhanh, đổi trả linh hoạt và hỗ trợ tư vấn chọn size chính xác.
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent">•</span>
+                  Thiết kế thời trang, đa dạng màu sắc và công nghệ đệm hiện đại cho mọi hoạt động.
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent">•</span>
+                  Thông tin sản phẩm chi tiết giúp bạn chọn đúng mẫu ngay từ lần đầu xem.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Blog Posts Section */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
