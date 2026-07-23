@@ -235,6 +235,46 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 bg-card">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-accent font-semibold uppercase tracking-widest mb-2">Câu hỏi thường gặp</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Câu trả lời cho những thắc mắc phổ biến</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Dưới đây là một số câu hỏi khách hàng thường hỏi khi mua giày tại SOLE. Chúng tôi muốn bạn yên tâm ngay từ lần đầu truy cập trang web.
+            </p>
+          </div>
+
+          <div className="space-y-8 text-muted-foreground">
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-3">SOLE có hỗ trợ đổi size không?</h3>
+              <p>
+                Chắc chắn rồi. SOLE cung cấp chính sách đổi size nhanh chóng trong vòng 7 ngày kể từ ngày nhận hàng. Chúng tôi hỗ trợ hướng dẫn chọn size chính xác dựa trên chiều dài bàn chân và kiểu dáng giày, để bạn không phải lo lắng khi đặt hàng trực tuyến.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-3">Giày SOLE có phù hợp để chạy bộ và chơi thể thao không?</h3>
+              <p>
+                Có. Nhiều mẫu giày tại SOLE được thiết kế dành riêng cho chạy bộ, bóng rổ và tập luyện. Chúng tôi mô tả rõ ràng công nghệ đệm, chất liệu và hỗ trợ cổ chân của từng sản phẩm để bạn chọn đúng đôi phù hợp với nhu cầu vận động.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-3">Làm sao để biết giày phù hợp với phong cách của tôi?</h3>
+              <p>
+                Trang chủ và trang danh mục sản phẩm của SOLE đều có các bộ lọc theo category, màu sắc và thương hiệu. Bạn có thể dễ dàng tìm giày lifestyle, giày chạy bộ hoặc giày bóng rổ theo phong cách cá nhân, đồng thời xem hình ảnh thật và mô tả chi tiết để quyết định nhanh chóng.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-3">SOLE có giao hàng nhanh trong nước không?</h3>
+              <p>
+                Có. SOLE hợp tác với đối tác vận chuyển uy tín để giao hàng nhanh trong nước, đồng thời cung cấp theo dõi đơn hàng để bạn kiểm soát thời gian nhận hàng một cách dễ dàng.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Blog Posts Section */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
