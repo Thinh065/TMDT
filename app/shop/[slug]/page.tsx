@@ -10,12 +10,53 @@ import {
 import type { Metadata } from 'next';
 import ProductCard from '@/components/shop/product-card';
 import ProductDetailClient from '@/components/shop/product-detail';
-import { productSlug } from '@/lib/utils/formatting';
+import { generateProductDescription, productSlug } from '@/lib/utils/formatting';
 import { getProductBySlug, getProducts } from '@/lib/product-service';
 
 interface ProductDetailPageProps {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: ProductDetailPageProps): Promise<Metadata> {
+  const { slug } = await params as { slug: string };
+  const product = await getProductBySlug(slug);
+
+  if (!product) {
+    return {
+      title: 'Sản Phẩm Không Tìm Thấy',
+      description: 'Không tìm thấy sản phẩm.',
+    };
+  }
+
+  const description = generateProductDescription(product);
+
+  return {
+    title: `${product.name} | ${product.brand} - SOLE Store`,
+    description,
+    openGraph: {
+      type: 'website',
+      locale: 'vi_VN',
+      url: `https://tmdt-9evc.vercel.app/shop/${slug}`,
+      siteName: 'SOLE Store',
+      title: `${product.name} | ${product.brand}`,
+      description,
+      images: [
+        {
+          url: product.image,
+          width: 1200,
+          height: 630,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.name} | ${product.brand}`,
+      description,
+      images: [product.image],
+    },
   };
 }
 

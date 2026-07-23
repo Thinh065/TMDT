@@ -31,3 +31,16 @@ export const productSlug = (text: string): string => {
     .replace(/\p{Diacritic}/gu, '')
     .replace(/[^A-Za-z0-9]/g, '');
 };
+
+export const generateProductDescription = (product: {
+  name: string;
+  brand?: string;
+  category?: string;
+  material?: string;
+  description?: string;
+}): string => {
+  const base = product.description?.trim() ?? '';
+  const extra = `${product.name} từ ${product.brand ?? 'SOLE'} với phong cách ${product.category ?? 'đời thường'}, chất liệu ${product.material ?? 'cao cấp'}, mang lại cảm giác thoải mái và phù hợp cho mọi hoạt động hàng ngày.`;
+  const result = base.length >= 160 ? base : `${base} ${extra}`.trim();
+  return result.length > 300 ? `${result.slice(0, 297).trim()}...` : result;
+};

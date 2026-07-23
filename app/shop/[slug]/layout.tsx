@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { mockProducts } from '@/lib/data/products';
-import { formatPrice, productSlug } from '@/lib/utils/formatting';
+import { formatPrice, productSlug, generateProductDescription } from '@/lib/utils/formatting';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,17 +21,18 @@ export async function generateMetadata({ params }: { params: LayoutProps['params
   }
 
   const productImage = product.images?.[0] || product.image;
+  const description = generateProductDescription(product);
 
   return {
     title: `${product.name} - SOLE`,
-    description: product.description,
+    description,
     openGraph: {
       type: 'website',
       locale: 'vi_VN',
       url: `https://tmdt-9evc.vercel.app/shop/${productSlug(product.name)}`,
       siteName: 'SOLE Shop',
       title: product.name,
-      description: product.description,
+      description,
       images: [
         {
           url: productImage,
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: { params: LayoutProps['params
     twitter: {
       card: 'summary_large_image',
       title: product.name,
-      description: product.description,
+      description,
       images: [productImage],
       creator: '@sole_store',
     },
