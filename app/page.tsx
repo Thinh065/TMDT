@@ -306,6 +306,48 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Content Expansion Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-accent font-semibold uppercase tracking-widest mb-2">SOLE Nói Gì</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Tại Sao Khách Hàng Tin Dùng SOLE
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              SOLE là điểm đến cho những người yêu giày sneaker và thể thao, nơi họ tìm thấy sản phẩm phù hợp với cả phong cách và hiệu suất. Chúng tôi kết hợp kinh nghiệm chọn giày, dịch vụ khách hàng chu đáo và chính sách hậu mãi rõ ràng để giúp bạn mua sắm dễ dàng và hoàn toàn yên tâm.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2 text-muted-foreground">
+            <div className="space-y-6">
+              <p>
+                Mỗi sản phẩm tại SOLE đều được tuyển chọn từ những thương hiệu hàng đầu như Nike, Adidas, Jordan, Puma và New Balance. Chúng tôi tập trung vào những mẫu giày có thiết kế hiện đại, cảm giác êm ái và độ bền cao, phù hợp cho cả vận động hàng ngày và phong cách streetwear.
+              </p>
+              <p>
+                Trong phần miêu tả chi tiết sản phẩm, bạn sẽ thấy thông tin về chất liệu, công nghệ đệm và kích cỡ được trình bày rõ ràng. Điều này giúp bạn lựa chọn đúng đôi giày phù hợp với nhu cầu chạy bộ, chơi bóng hoặc dạo phố mà không cần mất thời gian tìm kiếm.
+              </p>
+              <p>
+                Ngoài ra, SOLE luôn cập nhật xu hướng mới nhất và các bộ sưu tập độc quyền. Bạn có thể dễ dàng so sánh các mẫu giày, xem đánh giá cũng như cập nhật các chương trình khuyến mãi từ website ngay trên trang chủ.
+              </p>
+            </div>
+
+            <div className="rounded-3xl bg-card border border-border p-8">
+              <h3 className="text-2xl font-semibold text-foreground mb-4">Cam Kết Dịch Vụ</h3>
+              <p className="mb-4">
+                Chúng tôi đồng hành cùng bạn từ lúc chọn giày đến khi nhận hàng. SOLE cung cấp:
+              </p>
+              <ul className="space-y-4 text-muted-foreground">
+                <li className="flex gap-3"><span className="text-accent">•</span> Tư vấn chọn size chính xác và phù hợp từng dáng chân.</li>
+                <li className="flex gap-3"><span className="text-accent">•</span> Giao hàng nhanh chóng, kiểm tra chất lượng trước khi gửi.</li>
+                <li className="flex gap-3"><span className="text-accent">•</span> Chính sách đổi trả rõ ràng và hỗ trợ bảo hành khi cần.</li>
+                <li className="flex gap-3"><span className="text-accent">•</span> Cập nhật tin tức, mẹo chọn giày và xu hướng sneaker mới nhất.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-black via-gray-900 to-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
