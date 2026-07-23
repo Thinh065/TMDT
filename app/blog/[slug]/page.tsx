@@ -3,6 +3,14 @@ import { use } from 'react';
 import type { Metadata } from 'next';
 import { mockBlogPosts } from '@/lib/data/blog-posts';
 import { Button } from '@/components/ui/button';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 import { formatDate } from '@/lib/utils/formatting';
 import { ArrowLeft, Calendar, User } from 'lucide-react';
 
@@ -106,6 +114,22 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
       />
       {/* Header */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Trang Chủ</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>{'>'}</BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>{'>'}</BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbPage>{post.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+
         <Link href="/blog" className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" />
           Quay Lại Blog
